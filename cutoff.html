@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cut Off - NaukriVexa</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#222;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:18px;
+  text-align:center;
+}
+
+header h1{
+  font-size:25px;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:18px;
+}
+
+.search{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+  margin-bottom:18px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin-bottom:14px;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.card h2{
+  font-size:19px;
+  margin-bottom:8px;
+}
+
+.badge{
+  display:inline-block;
+  background:#eef2ff;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:13px;
+  margin:4px 3px 8px 0;
+}
+
+.card p{
+  color:#555;
+  line-height:1.5;
+}
+
+button{
+  margin-top:12px;
+  padding:10px 14px;
+  border:0;
+  border-radius:8px;
+  background:#111827;
+  color:white;
+  cursor:pointer;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin-top:20px;
+  text-decoration:none;
+  color:#111827;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📊 Exam Cut Off</h1>
+  <p>NaukriVexa</p>
+</header>
+
+<div class="container">
+
+<input
+  type="text"
+  id="search"
+  class="search"
+  placeholder="Cut Off खोजें..."
+>
+
+<div id="list">
+
+  <div class="card">
+    <h2>SSC CGL Cut Off</h2>
+    <span class="badge">SSC</span>
+    <span class="badge">Graduate</span>
+    <p>SSC CGL की Tier और category-wise cut off की जानकारी यहाँ उपलब्ध कराई जाएगी।</p>
+    <button onclick="alert('Official SSC cut off जारी होने पर यहाँ verified details जोड़ी जाएंगी।')">
+      Cut Off देखें
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>SSC CHSL Cut Off</h2>
+    <span class="badge">SSC</span>
+    <span class="badge">12th Pass</span>
+    <p>SSC CHSL की category और post-wise cut off की जानकारी यहाँ मिलेगी।</p>
+    <button onclick="alert('Official SSC cut off जारी होने पर यहाँ verified details जोड़ी जाएंगी।')">
+      Cut Off देखें
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>SSC MTS Cut Off</h2>
+    <span class="badge">SSC</span>
+    <span class="badge">10th Pass</span>
+    <p>SSC MTS की state और category-wise cut off की जानकारी यहाँ मिलेगी।</p>
+    <button onclick="alert('Official SSC cut off जारी होने पर यहाँ verified details जोड़ी जाएंगी।')">
+      Cut Off देखें
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>Railway Cut Off</h2>
+    <span class="badge">Railway</span>
+    <p>RRB की अलग-अलग परीक्षाओं की zone और category-wise cut off की जानकारी यहाँ मिलेगी।</p>
+    <button onclick="alert('Official RRB cut off जारी होने पर यहाँ verified details जोड़ी जाएंगी।')">
+      Cut Off देखें
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>Police Recruitment Cut Off</h2>
+    <span class="badge">Police</span>
+    <p>Police भर्ती की written और final cut off की जानकारी यहाँ उपलब्ध कराई जाएगी।</p>
+    <button onclick="alert('Official notification/result के अनुसार verified cut off यहाँ जोड़ी जाएगी।')">
+      Cut Off देखें
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>Defence Recruitment Cut Off</h2>
+    <span class="badge">Defence</span>
+    <p>Defence भर्ती परीक्षाओं की cut off की जानकारी यहाँ मिलेगी।</p>
+    <button onclick="alert('Official cut off जारी होने पर यहाँ verified details जोड़ी जाएंगी।')">
+      Cut Off देखें
+    </button>
+  </div>
+
+</div>
+
+<a href="index.html" class="back">⬅️ वापस Homepage</a>
+
+</div>
+
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input", function(){
+  const value = this.value.toLowerCase();
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+
+    if(text.includes(value)){
+      card.style.display = "block";
+    }else{
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
