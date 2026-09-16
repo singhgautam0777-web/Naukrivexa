@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Physical Eligibility Checker - NaukriVexa</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#222;
+}
+
+header{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:20px 15px;
+}
+
+header h1{
+  font-size:24px;
+  margin-bottom:6px;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:18px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  margin-bottom:16px;
+}
+
+label{
+  display:block;
+  margin-top:14px;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+input,select{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:9px;
+  font-size:16px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  border:0;
+  border-radius:9px;
+  background:#111827;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.result{
+  margin-top:18px;
+  padding:15px;
+  border-radius:10px;
+  background:#eef2ff;
+  line-height:1.6;
+}
+
+.warning{
+  margin-top:15px;
+  padding:12px;
+  background:#fff7ed;
+  border-radius:9px;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin:20px 0;
+  text-decoration:none;
+  color:#111827;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📏 Physical Eligibility Checker</h1>
+  <p>NaukriVexa</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<label>Age</label>
+<input type="number" id="age" placeholder="जैसे 18">
+
+<label>Gender</label>
+<select id="gender">
+  <option value="">Select करें</option>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+</select>
+
+<label>Category</label>
+<select id="category">
+  <option value="">Select करें</option>
+  <option>General</option>
+  <option>EWS</option>
+  <option>OBC</option>
+  <option>SC</option>
+  <option>ST</option>
+</select>
+
+<label>State</label>
+<select id="state">
+  <option value="">Select State</option>
+  <option>Uttar Pradesh</option>
+  <option>Bihar</option>
+  <option>Jharkhand</option>
+  <option>Delhi</option>
+  <option>Other</option>
+</select>
+
+<label>Height (cm)</label>
+<input type="number" id="height" placeholder="जैसे 167">
+
+<label>Chest Normal (cm)</label>
+<input type="number" id="chest" placeholder="जैसे 76">
+
+<label>Chest Expanded (cm)</label>
+<input type="number" id="expanded" placeholder="जैसे 84">
+
+<button onclick="checkPhysical()">
+  🔎 Physical Eligibility Check करें
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<div class="card">
+
+<h3>📌 Important</h3>
+
+<div class="warning">
+यह checker केवल basic/informational matching के लिए है।
+अलग-अलग भर्ती, राज्य, category, gender और post के अनुसार
+Height, Chest, Weight तथा Physical Standards अलग हो सकते हैं।
+
+Final eligibility हमेशा संबंधित भर्ती की official notification
+से verify करें।
+</div>
+
+</div>
+
+<a href="index.html" class="back">
+⬅️ वापस Homepage
+</a>
+
+</div>
+
+<script>
+
+function checkPhysical(){
+
+  const age = Number(document.getElementById("age").value);
+  const gender = document.getElementById("gender").value;
+  const category = document.getElementById("category").value;
+  const state = document.getElementById("state").value;
+  const height = Number(document.getElementById("height").value);
+  const chest = Number(document.getElementById("chest").value);
+  const expanded = Number(document.getElementById("expanded").value);
+
+  if(!age || !gender || !category || !state || !height){
+
+    document.getElementById("result").innerHTML =
+      "<div class='result'>⚠️ कृपया जरूरी जानकारी पूरी भरें।</div>";
+
+    return;
+  }
+
+  let result = "";
+
+  result += "<div class='result'>";
+  result += "<h3>📋 आपकी जानकारी</h3>";
+  result += "<p>Age: " + age + " वर्ष</p>";
+  result += "<p>Gender: " + gender + "</p>";
+  result += "<p>Category: " + category + "</p>";
+  result += "<p>State: " + state + "</p>";
+  result += "<p>Height: " + height + " cm</p>";
+
+  if(chest > 0){
+    result += "<p>Chest: " + chest + " cm</p>";
+  }
+
+  if(expanded > 0){
+    result += "<p>Expanded Chest: " + expanded + " cm</p>";
+  }
+
+  result += "<hr>";
+  result += "<h3>🔎 Basic Result</h3>";
+  result += "<p>आपकी जानकारी के आधार पर आगे अलग-अलग भर्ती के Physical Standards से मिलान किया जा सकता है।</p>";
+  result += "<p>⚠️ यह Final Eligibility नहीं है।</p>";
+
+  result += "</div>";
+
+  document.getElementById("result").innerHTML = result;
+}
+
+</script>
+
+</body>
+</html>
