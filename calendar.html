@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Calendar - NaukriVexa</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.container{
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+    margin-bottom:15px;
+}
+.exam{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.exam h2{
+    margin-top:0;
+}
+.date{
+    display:inline-block;
+    background:#eef2ff;
+    padding:7px 12px;
+    border-radius:20px;
+    font-weight:bold;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📅 Exam Calendar</h1>
+    <p>NaukriVexa पर परीक्षा की महत्वपूर्ण dates</p>
+</header>
+
+<div class="container">
+
+<input class="search" type="text" id="search"
+placeholder="🔎 Exam search करें..." onkeyup="searchExams()">
+
+<div id="exams">
+
+<div class="exam">
+<h2>SSC CGL</h2>
+<span class="date">Exam Dates — Official notification देखें</span>
+<p>SSC CGL की application, exam और अन्य महत्वपूर्ण dates की जानकारी।</p>
+</div>
+
+<div class="exam">
+<h2>SSC CHSL</h2>
+<span class="date">Exam Dates — Official notification देखें</span>
+<p>SSC CHSL की महत्वपूर्ण dates और examination updates।</p>
+</div>
+
+<div class="exam">
+<h2>SSC MTS</h2>
+<span class="date">Exam Dates — Official notification देखें</span>
+<p>SSC MTS की application और examination dates।</p>
+</div>
+
+<div class="exam">
+<h2>Railway Exams</h2>
+<span class="date">Dates — Official RRB notice देखें</span>
+<p>RRB और Railway recruitments की examination dates और updates।</p>
+</div>
+
+<div class="exam">
+<h2>Police Exams</h2>
+<span class="date">Dates — Official notification देखें</span>
+<p>Police और Constable recruitment की परीक्षा dates।</p>
+</div>
+
+<div class="exam">
+<h2>Defence Exams</h2>
+<span class="date">Dates — Official notification देखें</span>
+<p>Army, Air Force, Navy और अन्य Defence exams की dates।</p>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+
+<script>
+function searchExams(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let exams = document.querySelectorAll(".exam");
+
+    exams.forEach(function(exam){
+        let text = exam.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            exam.style.display = "block";
+        }else{
+            exam.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
