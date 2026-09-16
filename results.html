@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latest Results - NaukriVexa</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.container{
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+    margin-bottom:15px;
+}
+.result{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.result h2{
+    margin-top:0;
+}
+.badge{
+    display:inline-block;
+    background:#eef2ff;
+    padding:6px 10px;
+    border-radius:20px;
+    margin:3px;
+    font-size:13px;
+}
+button{
+    padding:10px 15px;
+    border:0;
+    border-radius:7px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📋 Latest Results</h1>
+    <p>NaukriVexa पर Exam Results</p>
+</header>
+
+<div class="container">
+
+<input class="search" type="text" id="search"
+placeholder="🔎 Result search करें..." onkeyup="searchResults()">
+
+<div id="results">
+
+<div class="result">
+<h2>SSC CGL Result</h2>
+<span class="badge">SSC</span>
+<span class="badge">Graduate</span>
+<p>SSC CGL examination के result की जानकारी यहाँ मिलेगी।</p>
+<button onclick="alert('Official result जारी होने पर यहाँ direct result link जोड़ा जाएगा।')">Check Result</button>
+</div>
+
+<div class="result">
+<h2>SSC CHSL Result</h2>
+<span class="badge">SSC</span>
+<span class="badge">12th Pass</span>
+<p>SSC CHSL examination के result और आगे की प्रक्रिया की जानकारी।</p>
+<button onclick="alert('Official result जारी होने पर यहाँ direct result link जोड़ा जाएगा।')">Check Result</button>
+</div>
+
+<div class="result">
+<h2>SSC MTS Result</h2>
+<span class="badge">SSC</span>
+<span class="badge">10th Pass</span>
+<p>SSC MTS examination result की जानकारी।</p>
+<button onclick="alert('Official result जारी होने पर यहाँ direct result link जोड़ा जाएगा।')">Check Result</button>
+</div>
+
+<div class="result">
+<h2>Railway Result</h2>
+<span class="badge">Railway</span>
+<span class="badge">RRB</span>
+<p>Railway examinations के results और updates।</p>
+<button onclick="alert('Official result जारी होने पर यहाँ direct result link जोड़ा जाएगा।')">Check Result</button>
+</div>
+
+<div class="result">
+<h2>Police Recruitment Result</h2>
+<span class="badge">Police</span>
+<span class="badge">State Government</span>
+<p>Police और Constable recruitment results की जानकारी।</p>
+<button onclick="alert('Official result जारी होने पर यहाँ direct result link जोड़ा जाएगा।')">Check Result</button>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+
+<script>
+function searchResults(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let results = document.querySelectorAll(".result");
+
+    results.forEach(function(item){
+        let text = item.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            item.style.display = "block";
+        }else{
+            item.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
