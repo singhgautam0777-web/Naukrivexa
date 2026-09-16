@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admit Card - NaukriVexa</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.container{
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+    margin-bottom:15px;
+}
+.card{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.card h2{
+    margin-top:0;
+}
+.badge{
+    display:inline-block;
+    background:#eef2ff;
+    padding:6px 10px;
+    border-radius:20px;
+    margin:3px;
+    font-size:13px;
+}
+button{
+    padding:10px 15px;
+    border:0;
+    border-radius:7px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎫 Admit Card</h1>
+    <p>NaukriVexa पर Latest Admit Card Updates</p>
+</header>
+
+<div class="container">
+
+<input class="search" type="text" id="search"
+placeholder="🔎 Admit Card search करें..." onkeyup="searchCards()">
+
+<div id="cards">
+
+<div class="card">
+<h2>SSC CGL Admit Card</h2>
+<span class="badge">SSC</span>
+<span class="badge">Graduate</span>
+<p>SSC CGL परीक्षा के admit card और exam updates।</p>
+<button onclick="alert('Official admit card जारी होने पर यहाँ direct link जोड़ा जाएगा।')">Download</button>
+</div>
+
+<div class="card">
+<h2>SSC CHSL Admit Card</h2>
+<span class="badge">SSC</span>
+<span class="badge">12th Pass</span>
+<p>SSC CHSL examination के admit card की जानकारी।</p>
+<button onclick="alert('Official admit card जारी होने पर यहाँ direct link जोड़ा जाएगा।')">Download</button>
+</div>
+
+<div class="card">
+<h2>SSC MTS Admit Card</h2>
+<span class="badge">SSC</span>
+<span class="badge">10th Pass</span>
+<p>SSC MTS examination के admit card updates।</p>
+<button onclick="alert('Official admit card जारी होने पर यहाँ direct link जोड़ा जाएगा।')">Download</button>
+</div>
+
+<div class="card">
+<h2>Railway Admit Card</h2>
+<span class="badge">Railway</span>
+<span class="badge">RRB</span>
+<p>Railway examinations के admit card और exam updates।</p>
+<button onclick="alert('Official admit card जारी होने पर यहाँ direct link जोड़ा जाएगा।')">Download</button>
+</div>
+
+<div class="card">
+<h2>Police Recruitment Admit Card</h2>
+<span class="badge">Police</span>
+<span class="badge">State Government</span>
+<p>Police और Constable भर्ती के admit card updates।</p>
+<button onclick="alert('Official admit card जारी होने पर यहाँ direct link जोड़ा जाएगा।')">Download</button>
+</div>
+
+<div class="card">
+<h2>Defence Recruitment Admit Card</h2>
+<span class="badge">Defence</span>
+<span class="badge">Army / Air Force / Navy</span>
+<p>Defence examinations के admit card updates।</p>
+<button onclick="alert('Official admit card जारी होने पर यहाँ direct link जोड़ा जाएगा।')">Download</button>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+
+<script>
+function searchCards(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card){
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
