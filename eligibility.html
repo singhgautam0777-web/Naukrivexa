@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eligibility Checker - NaukriVexa</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.container{
+    max-width:600px;
+    margin:25px auto;
+    padding:20px;
+}
+.box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+input,select{
+    width:100%;
+    padding:12px;
+    margin-top:7px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+button{
+    width:100%;
+    padding:14px;
+    margin-top:22px;
+    border:0;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+}
+#result{
+    margin-top:20px;
+    padding:15px;
+    border-radius:10px;
+    background:#eef6ff;
+    display:none;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>✅ Eligibility Checker</h1>
+    <p>NaukriVexa</p>
+</header>
+
+<div class="container">
+<div class="box">
+
+<h2>अपनी Eligibility Check करें</h2>
+<p>अपनी basic details भरें और उपलब्ध jobs देखें।</p>
+
+<label>Age</label>
+<input type="number" id="age" placeholder="अपनी उम्र डालें">
+
+<label>Qualification</label>
+<select id="qualification">
+    <option value="">Select Qualification</option>
+    <option value="8th">8th Pass</option>
+    <option value="10th">10th Pass</option>
+    <option value="12th">12th Pass</option>
+    <option value="graduate">Graduate</option>
+</select>
+
+<label>Category</label>
+<select id="category">
+    <option value="">Select Category</option>
+    <option>General</option>
+    <option>EWS</option>
+    <option>OBC</option>
+    <option>SC</option>
+    <option>ST</option>
+</select>
+
+<label>State</label>
+<select id="state">
+    <option value="">Select State</option>
+    <option>Uttar Pradesh</option>
+    <option>Bihar</option>
+    <option>Jharkhand</option>
+    <option>Other</option>
+</select>
+
+<label>Height (cm)</label>
+<input type="number" id="height" placeholder="जैसे 167">
+
+<button onclick="checkEligibility()">🔎 Eligibility Check करें</button>
+
+<div id="result"></div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+</div>
+
+<script>
+function checkEligibility(){
+
+    let age = Number(document.getElementById("age").value);
+    let qualification = document.getElementById("qualification").value;
+    let category = document.getElementById("category").value;
+    let state = document.getElementById("state").value;
+    let height = Number(document.getElementById("height").value);
+
+    let result = document.getElementById("result");
+
+    if(!age || !qualification || !category || !state || !height){
+        result.style.display = "block";
+        result.innerHTML = "⚠️ कृपया सभी details भरें।";
+        return;
+    }
+
+    let jobs = [];
+
+    if(age >= 18 && age <= 25 && 
+       (qualification === "10th" || qualification === "12th" || qualification === "graduate")){
+        jobs.push("SSC MTS — basic age/qualification match");
+    }
+
+    if(age >= 18 && age <= 27 && 
+       (qualification === "12th" || qualification === "graduate")){
+        jobs.push("SSC CHSL — basic age/qualification match");
+    }
+
+    if(age >= 18 && age <= 32 && qualification === "graduate"){
+        jobs.push("SSC CGL — basic age/qualification match");
+    }
+
+    if(age >= 18 && qualification === "10th"){
+        jobs.push("Railway / Group-level recruitments — notification के अनुसार");
+    }
+
+    result.style.display = "block";
+
+    if(jobs.length > 0){
+        result.innerHTML =
+        "<h3>🎯 Possible Matches</h3>" +
+        jobs.map(job => "<p>✅ " + job + "</p>").join("") +
+        "<hr><small>⚠️ ये केवल basic matching है। अंतिम eligibility हमेशा संबंधित official recruitment notification से verify करें।</small>";
+    }else{
+        result.innerHTML =
+        "<h3>कोई basic match नहीं मिला</h3>" +
+        "<p>दूसरी qualification/age details के साथ फिर से check करें।</p>" +
+        "<small>अंतिम eligibility official notification से verify करें।</small>";
+    }
+}
+</script>
+
+</body>
+</html>
