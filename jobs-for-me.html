@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jobs For Me - NaukriVexa</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+header{
+    background:linear-gradient(135deg,#1557d6,#0b3d91);
+    color:white;
+    padding:22px 15px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:7px 0 0;
+    font-size:14px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:18px 15px;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 2px 10px #dfe4ec;
+    margin-bottom:18px;
+}
+
+h2{
+    margin-top:0;
+    font-size:21px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-top:15px;
+    margin-bottom:6px;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccd3df;
+    border-radius:8px;
+    font-size:15px;
+    background:white;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:0;
+    border-radius:9px;
+    background:#1557d6;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.result{
+    display:none;
+}
+
+.job{
+    border:1px solid #e0e5ed;
+    padding:15px;
+    border-radius:10px;
+    margin-top:12px;
+    background:#fafcff;
+}
+
+.job h3{
+    margin:0 0 8px;
+    color:#1557d6;
+}
+
+.job p{
+    margin:5px 0;
+    font-size:14px;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin:18px 0;
+    color:#1557d6;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎯 Jobs For Me</h1>
+    <p>NaukriVexa Eligibility & Career Finder</p>
+</header>
+
+<main class="container">
+
+<div class="box">
+
+<h2>अपनी जानकारी भरें</h2>
+
+<label>Age</label>
+<input id="age" type="number" placeholder="जैसे 18">
+
+<label>Qualification</label>
+<select id="qualification">
+    <option value="">Select Qualification</option>
+    <option value="8">8th Pass</option>
+    <option value="10">10th Pass</option>
+    <option value="12">12th Pass</option>
+    <option value="graduate">Graduate</option>
+</select>
+
+<label>State</label>
+<select id="state">
+    <option value="">Select State</option>
+    <option>Uttar Pradesh</option>
+    <option>Bihar</option>
+    <option>Jharkhand</option>
+    <option>Delhi</option>
+    <option>Rajasthan</option>
+    <option>Other</option>
+</select>
+
+<label>Category</label>
+<select id="category">
+    <option value="">Select Category</option>
+    <option>General</option>
+    <option>EWS</option>
+    <option>OBC</option>
+    <option>SC</option>
+    <option>ST</option>
+</select>
+
+<label>Gender</label>
+<select id="gender">
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+</select>
+
+<label>Height (cm)</label>
+<input id="height" type="number" placeholder="जैसे 167">
+
+<button onclick="findJobs()">🔎 मेरी Jobs खोजें</button>
+
+</div>
+
+
+<div class="box result" id="result">
+
+<h2>🎯 आपकी Matching Jobs</h2>
+
+<div id="jobList"></div>
+
+</div>
+
+<a class="back" href="index.html">← NaukriVexa Home पर वापस जाएँ</a>
+
+</main>
+
+
+<script>
+
+function findJobs(){
+
+    const age = Number(document.getElementById("age").value);
+    const qualification = document.getElementById("qualification").value;
+    const height = Number(document.getElementById("height").value);
+
+    const result = document.getElementById("result");
+    const jobList = document.getElementById("jobList");
+
+    jobList.innerHTML = "";
+
+    if(!age || !qualification){
+
+        alert("कृपया Age और Qualification भरें।");
+        return;
+    }
+
+    let jobs = [];
+
+    /* 10th level */
+
+    if(
+        (qualification === "10" ||
+         qualification === "12" ||
+         qualification === "graduate") &&
+        age >= 18 && age <= 27
+    ){
+        jobs.push({
+            name:"SSC MTS",
+            info:"Qualification: 10th Pass | Typical age range: 18–27"
+        });
+    }
+
+    /* 12th level */
+
+    if(
+        (qualification === "12" ||
+         qualification === "graduate") &&
+        age >= 18 && age <= 27
+    ){
+        jobs.push({
+            name:"SSC CHSL",
+            info:"Qualification: 12th Pass | Age depends on notification"
+        });
+    }
+
+    /* Graduate */
+
+    if(
+        qualification === "graduate" &&
+        age >= 18 && age <= 32
+    ){
+        jobs.push({
+            name:"SSC CGL",
+            info:"Qualification: Graduation | Age varies by post"
+        });
+    }
+
+    /* Railway example */
+
+    if(
+        (qualification === "10" ||
+         qualification === "12" ||
+         qualification === "graduate") &&
+        age >= 18 && age <= 33
+    ){
+        jobs.push({
+            name:"Railway Recruitment",
+            info:"Qualification and age vary according to the particular post"
+        });
+    }
+
+    /* General Police example */
+
+    if(
+        (qualification === "12" ||
+         qualification === "graduate") &&
+        age >= 18 && age <= 27
+    ){
+        jobs.push({
+            name:"Police / Constable Recruitment",
+            info:"Physical standards and age vary by state and notification"
+        });
+    }
+
+
+    if(jobs.length === 0){
+
+        jobList.innerHTML =
+        "<p>अभी दिए गए details के आधार पर कोई sample match नहीं मिला। नई भर्ती आने पर eligibility दोबारा check करें।</p>";
+
+    }else{
+
+        jobs.forEach(function(job){
+
+            jobList.innerHTML +=
+            '<div class="job">' +
+            '<h3>💼 '+job.name+'</h3>' +
+            '<p>'+job.info+'</p>' +
+            '<p>⚠️ Final eligibility हमेशा official recruitment notification से verify करें।</p>' +
+            '</div>';
+
+        });
+
+    }
+
+    result.style.display="block";
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
