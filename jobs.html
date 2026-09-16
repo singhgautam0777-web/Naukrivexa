@@ -3,164 +3,937 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Government Jobs - NaukriVexa</title>
+
+<title>Government Job Details | NaukriVexa</title>
+
+<meta name="description"
+content="NaukriVexa पर Government Job की vacancy, eligibility, age limit, salary, fee, selection process और official links की जानकारी देखें.">
 
 <style>
-body{
-    font-family:Arial,sans-serif;
+*{
     margin:0;
-    background:#f5f7fb;
-    color:#222;
-}
-header{
-    background:#111827;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
-.container{
-    max-width:700px;
-    margin:20px auto;
-    padding:15px;
-}
-.search{
-    width:100%;
-    padding:13px;
-    border:1px solid #ddd;
-    border-radius:8px;
+    padding:0;
     box-sizing:border-box;
-    margin-bottom:15px;
 }
-.job{
-    background:white;
-    padding:18px;
-    margin-bottom:15px;
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.header{
+    background:linear-gradient(135deg,#0f172a,#1d4ed8);
+    color:white;
+    padding:15px 16px 30px;
+}
+
+.nav{
+    max-width:1050px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-box{
+    width:40px;
+    height:40px;
     border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    background:white;
+    color:#1d4ed8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:900;
 }
-.job h2{
-    margin-top:0;
-}
-.badge{
-    display:inline-block;
-    background:#eef2ff;
-    padding:6px 10px;
-    border-radius:20px;
-    margin:3px;
+
+.home{
+    border:1px solid rgba(255,255,255,.3);
+    background:rgba(255,255,255,.1);
+    padding:8px 13px;
+    border-radius:10px;
     font-size:13px;
 }
-button{
-    padding:10px 15px;
+
+.hero{
+    max-width:1050px;
+    margin:32px auto 0;
+}
+
+.breadcrumb{
+    color:#bfdbfe;
+    font-size:12px;
+    margin-bottom:13px;
+}
+
+.hero h1{
+    font-size:31px;
+    line-height:1.25;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#dbeafe;
+    font-size:14px;
+    max-width:700px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:17px;
+}
+
+.tag{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:11px;
+}
+
+.container{
+    max-width:1050px;
+    margin:-18px auto 50px;
+    padding:0 15px;
+    position:relative;
+}
+
+.notice{
+    background:#fff;
+    border-radius:17px;
+    padding:15px 17px;
+    box-shadow:0 10px 30px rgba(15,23,42,.09);
+    border:1px solid #e5e7eb;
+    margin-bottom:16px;
+}
+
+.notice strong{
+    color:#b45309;
+}
+
+.notice p{
+    font-size:13px;
+    color:#64748b;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:11px;
+    margin-bottom:18px;
+}
+
+.info{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:15px;
+}
+
+.info-icon{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.info-label{
+    font-size:11px;
+    color:#64748b;
+    margin-bottom:2px;
+}
+
+.info-value{
+    font-size:15px;
+    font-weight:800;
+    color:#172033;
+}
+
+.section{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:19px;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+}
+
+.table tr{
+    border-bottom:1px solid #edf0f4;
+}
+
+.table tr:last-child{
+    border-bottom:0;
+}
+
+.table td{
+    padding:11px 5px;
+    font-size:13px;
+    vertical-align:top;
+}
+
+.table td:first-child{
+    width:38%;
+    color:#64748b;
+    font-weight:600;
+}
+
+.table td:last-child{
+    font-weight:700;
+}
+
+.list{
+    padding-left:19px;
+}
+
+.list li{
+    margin:7px 0;
+    font-size:14px;
+}
+
+.action-box{
+    background:linear-gradient(135deg,#eff6ff,#f8fafc);
+    border:1px solid #dbeafe;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.action-box h2{
+    font-size:19px;
+    margin-bottom:5px;
+}
+
+.action-box p{
+    color:#64748b;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn{
     border:0;
-    border-radius:7px;
+    border-radius:11px;
+    padding:12px 17px;
+    font-weight:800;
+    font-size:13px;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-primary{
     background:#2563eb;
     color:white;
-    font-weight:bold;
 }
-.back{
+
+.btn-secondary{
+    background:white;
+    color:#1d4ed8;
+    border:1px solid #bfdbfe;
+}
+
+.btn-disabled{
+    background:#e2e8f0;
+    color:#64748b;
+    cursor:not-allowed;
+}
+
+.faq{
+    border-top:1px solid #edf0f4;
+    padding:13px 0;
+}
+
+.faq:first-of-type{
+    border-top:0;
+}
+
+.faq h3{
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.faq p{
+    font-size:13px;
+    color:#64748b;
+}
+
+.related{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:11px;
+}
+
+.related-card{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    padding:15px;
+}
+
+.related-card strong{
     display:block;
+    margin-bottom:4px;
+    font-size:14px;
+}
+
+.related-card span{
+    font-size:12px;
+    color:#64748b;
+}
+
+.footer{
+    background:#0f172a;
+    color:#cbd5e1;
     text-align:center;
-    margin:25px 0;
-    text-decoration:none;
+    padding:28px 15px;
+    font-size:12px;
+}
+
+.footer strong{
+    color:white;
+}
+
+@media(max-width:800px){
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .related{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .section{
+        padding:16px;
+    }
+
+    .table td{
+        font-size:12px;
+    }
+
+    .table td:first-child{
+        width:43%;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🏛️ Government Jobs</h1>
-    <p>NaukriVexa पर Latest Government Jobs</p>
+
+<header class="header">
+
+    <nav class="nav">
+
+        <a href="index.html" class="logo">
+            <div class="logo-box">NV</div>
+            <span>NaukriVexa</span>
+        </a>
+
+        <a href="index.html" class="home">
+            ← Home
+        </a>
+
+    </nav>
+
+
+    <div class="hero">
+
+        <div class="breadcrumb">
+            Home › Jobs › Government Job Details
+        </div>
+
+        <h1>
+            Government Job Details
+        </h1>
+
+        <p>
+            Vacancy, eligibility, age limit, salary, application fee,
+            selection process और official notification की पूरी जानकारी।
+        </p>
+
+        <div class="tags">
+            <span class="tag">🇮🇳 All India</span>
+            <span class="tag">Government Job</span>
+            <span class="tag">Official Information</span>
+        </div>
+
+    </div>
+
 </header>
 
-<div class="container">
 
-<input class="search" type="text" id="search"
-placeholder="🔎 Job search करें..." onkeyup="searchJobs()">
+<main class="container">
 
-<div id="jobs">
 
-<div class="job">
-<h2>SSC CGL</h2>
-<span class="badge">Graduate</span>
-<span class="badge">SSC</span>
-<span class="badge">Central Government</span>
-<p>SSC CGL के माध्यम से विभिन्न Central Government posts के लिए भर्ती।</p>
-<a href="job.html" class="btn">
-  📋 View Details
-</a>
+    <div class="notice">
 
-<div class="job">
-<h2>SSC CHSL</h2>
-<span class="badge">12th Pass</span>
-<span class="badge">SSC</span>
-<span class="badge">Central Government</span>
-<p>12th pass candidates के लिए विभिन्न posts की भर्ती।</p>
-<a href="chsl.html" class="btn">
-  📋 View Details
-</a>
+        <p>
+            ⚠️ <strong>Important:</strong>
+            आवेदन करने से पहले संबंधित विभाग की official notification
+            जरूर पढ़ें। अंतिम eligibility और dates official notification
+            के अनुसार मान्य होंगी।
+        </p>
 
-<div class="job">
-<h2>SSC MTS</h2>
-<span class="badge">10th Pass</span>
-<span class="badge">SSC</span>
-<span class="badge">Central Government</span>
-<p>10th pass candidates के लिए Multi Tasking Staff recruitment।</p>
-<a href="mts.html" class="btn">
-  📋 View Details
-</a>
+    </div>
 
-<div class="job">
-<h2>Railway Recruitment</h2>
-<span class="badge">10th / 12th / Graduate</span>
-<span class="badge">Railway</span>
-<span class="badge">Central Government</span>
-<p>Indian Railways की अलग-अलग भर्ती और vacancies की जानकारी।</p>
-<a href="railway.html" class="btn">
-  📋 View Details
-</a>
 
-<div class="job">
-<h2>Police Recruitment</h2>
-<span class="badge">10th / 12th</span>
-<span class="badge">Police</span>
-<span class="badge">State Government</span>
-<p>Police और Constable भर्ती की जानकारी।</p>
-<a href="police.html" class="btn">
-  📋 View Details
-</a>
+    <!-- BASIC INFORMATION -->
 
-<div class="job">
-<h2>Defence Recruitment</h2>
-<span class="badge">10th / 12th</span>
-<span class="badge">Defence</span>
-<span class="badge">Government</span>
-<p>Army, Air Force, Navy और अन्य Defence recruitment की जानकारी।</p>
-<a href="defence.html" class="btn">
-  📋 View Details
-</a>
+    <div class="grid">
 
-</div>
+        <div class="info">
+            <div class="info-icon">🏢</div>
+            <div class="info-label">Department</div>
+            <div class="info-value">Government Department</div>
+        </div>
 
-<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+        <div class="info">
+            <div class="info-icon">👥</div>
+            <div class="info-label">Vacancies</div>
+            <div class="info-value">See Notification</div>
+        </div>
 
-</div>
+        <div class="info">
+            <div class="info-icon">🎓</div>
+            <div class="info-label">Qualification</div>
+            <div class="info-value">Post Wise</div>
+        </div>
+
+        <div class="info">
+            <div class="info-icon">📍</div>
+            <div class="info-label">Job Location</div>
+            <div class="info-value">All India</div>
+        </div>
+
+    </div>
+
+
+    <!-- ACTION -->
+
+    <div class="action-box">
+
+        <h2>🔗 Official Links</h2>
+
+        <p>
+            Official notification और application link केवल
+            verified information मिलने के बाद जोड़े जाएँगे।
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#"
+                class="btn btn-primary"
+                onclick="showLinkMessage(event)"
+            >
+                📝 Apply Online
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-secondary"
+                onclick="showLinkMessage(event)"
+            >
+                📄 Official Notification
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- IMPORTANT DATES -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            📅 Important Dates
+        </h2>
+
+        <table class="table">
+
+            <tr>
+                <td>Application Start</td>
+                <td>See Official Notification</td>
+            </tr>
+
+            <tr>
+                <td>Last Date</td>
+                <td>See Official Notification</td>
+            </tr>
+
+            <tr>
+                <td>Correction Date</td>
+                <td>अगर लागू हो</td>
+            </tr>
+
+            <tr>
+                <td>Exam Date</td>
+                <td>To be announced</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ELIGIBILITY -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            🎓 Eligibility
+        </h2>
+
+        <table class="table">
+
+            <tr>
+                <td>Educational Qualification</td>
+                <td>Post के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Minimum Qualification</td>
+                <td>8th / 10th / 12th / Graduate / अन्य</td>
+            </tr>
+
+            <tr>
+                <td>Age Limit</td>
+                <td>Official Notification के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Age Relaxation</td>
+                <td>Government rules के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Nationality</td>
+                <td>Notification के अनुसार</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- APPLICATION FEE -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            💳 Application Fee
+        </h2>
+
+        <table class="table">
+
+            <tr>
+                <td>General / OBC</td>
+                <td>See Notification</td>
+            </tr>
+
+            <tr>
+                <td>SC / ST</td>
+                <td>See Notification</td>
+            </tr>
+
+            <tr>
+                <td>Female Candidates</td>
+                <td>See Notification</td>
+            </tr>
+
+            <tr>
+                <td>Payment Mode</td>
+                <td>Online / As notified</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- SALARY -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            💰 Salary & Pay
+        </h2>
+
+        <table class="table">
+
+            <tr>
+                <td>Pay Level</td>
+                <td>Post के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Basic Pay</td>
+                <td>Official Notification के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Allowances</td>
+                <td>Government rules के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Approx. Salary</td>
+                <td>Post और location के अनुसार</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- SELECTION -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            📝 Selection Process
+        </h2>
+
+        <ul class="list">
+
+            <li>Written Examination — अगर लागू हो</li>
+
+            <li>Skill / Typing Test — अगर post में लागू हो</li>
+
+            <li>Physical Test — अगर लागू हो</li>
+
+            <li>Document Verification</li>
+
+            <li>Medical Examination — अगर लागू हो</li>
+
+            <li>Final Merit / Selection</li>
+
+        </ul>
+
+        <p style="margin-top:12px;color:#64748b;font-size:13px;">
+            Exact selection process संबंधित recruitment notification
+            के अनुसार अलग हो सकता है।
+        </p>
+
+    </section>
+
+
+    <!-- EXAM -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            📚 Exam / Skill Information
+        </h2>
+
+        <table class="table">
+
+            <tr>
+                <td>Exam Mode</td>
+                <td>CBT / Written / As notified</td>
+            </tr>
+
+            <tr>
+                <td>Subjects</td>
+                <td>Notification के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Negative Marking</td>
+                <td>Official notification देखें</td>
+            </tr>
+
+            <tr>
+                <td>Skill Test</td>
+                <td>Post specific</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- PHYSICAL -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            📏 Physical Requirements
+        </h2>
+
+        <p style="font-size:14px;color:#475569;margin-bottom:12px;">
+            जिन recruitments में physical standards लागू होते हैं,
+            वहाँ height, chest, running, PET/PST और अन्य standards
+            संबंधित official notification के अनुसार होंगे।
+        </p>
+
+        <table class="table">
+
+            <tr>
+                <td>Height</td>
+                <td>Post / Category / Region के अनुसार</td>
+            </tr>
+
+            <tr>
+                <td>Chest</td>
+                <td>अगर लागू हो</td>
+            </tr>
+
+            <tr>
+                <td>Running / PET</td>
+                <td>अगर लागू हो</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- DOCUMENTS -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            📄 Documents
+        </h2>
+
+        <ul class="list">
+
+            <li>Educational qualification documents</li>
+
+            <li>Identity proof</li>
+
+            <li>Recent photograph</li>
+
+            <li>Signature</li>
+
+            <li>Category certificate, अगर लागू हो</li>
+
+            <li>Domicile / अन्य documents, अगर notification में मांगे गए हों</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- HOW TO APPLY -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            🚀 How to Apply
+        </h2>
+
+        <ol class="list">
+
+            <li>Official notification को ध्यान से पढ़ें।</li>
+
+            <li>Eligibility और age limit check करें।</li>
+
+            <li>Official recruitment website खोलें।</li>
+
+            <li>Registration / application form भरें।</li>
+
+            <li>Required documents upload करें।</li>
+
+            <li>Application fee, अगर लागू हो, जमा करें।</li>
+
+            <li>Final application submit करके PDF/receipt सुरक्षित रखें।</li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            ❓ Frequently Asked Questions
+        </h2>
+
+        <div class="faq">
+
+            <h3>
+                क्या यह job All India है?
+            </h3>
+
+            <p>
+                Job location और eligibility recruitment के अनुसार
+                अलग हो सकती है। Official notification देखें।
+            </p>
+
+        </div>
+
+        <div class="faq">
+
+            <h3>
+                क्या 10th/12th वाले apply कर सकते हैं?
+            </h3>
+
+            <p>
+                यह post पर निर्भर करता है। हर vacancy में minimum
+                educational qualification अलग हो सकती है।
+            </p>
+
+        </div>
+
+        <div class="faq">
+
+            <h3>
+                Official notification कहाँ मिलेगा?
+            </h3>
+
+            <p>
+                NaukriVexa पर verified official notification link
+                उपलब्ध होने पर दिया जाएगा।
+            </p>
+
+        </div>
+
+        <div class="faq">
+
+            <h3>
+                NaukriVexa पर information free है?
+            </h3>
+
+            <p>
+                हाँ, NaukriVexa का उद्देश्य government job information
+                और career tools को आसानी से उपलब्ध कराना है।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RELATED -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            🔎 Explore More
+        </h2>
+
+        <div class="related">
+
+            <a href="jobs.html" class="related-card">
+                <strong>📋 All Government Jobs</strong>
+                <span>नई और प्रमुख government job categories देखें</span>
+            </a>
+
+            <a href="results.html" class="related-card">
+                <strong>🎯 Latest Results</strong>
+                <span>Government exam results देखें</span>
+            </a>
+
+            <a href="admit-card.html" class="related-card">
+                <strong>🎫 Admit Cards</strong>
+                <span>Upcoming और available admit cards देखें</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <strong>NaukriVexa</strong><br>
+    Free Government Jobs & Career Information Portal<br><br>
+
+    © 2026 NaukriVexa. Information should be verified
+    with the concerned official recruitment authority.
+
+</footer>
+
 
 <script>
-function searchJobs(){
-    let input = document.getElementById("search").value.toLowerCase();
-    let jobs = document.querySelectorAll(".job");
 
-    jobs.forEach(function(job){
-        let text = job.innerText.toLowerCase();
+function showLinkMessage(event){
 
-        if(text.includes(input)){
-            job.style.display = "block";
-        }else{
-            job.style.display = "none";
-        }
-    });
+    event.preventDefault();
+
+    alert(
+        "Official Apply / Notification link vacancy verify होने के बाद यहाँ जोड़ा जाएगा."
+    );
+
 }
+
+
+/*
+JobPosting structured-data framework.
+
+जब किसी specific vacancy का verified data उपलब्ध होगा,
+तो इसी page में वास्तविक vacancy details के अनुसार
+JobPosting schema जोड़ा जा सकता है।
+*/
+
 </script>
 
 </body>
