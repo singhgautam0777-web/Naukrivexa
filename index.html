@@ -4,471 +4,1112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NaukriVexa - Government Jobs, Results & Career Portal</title>
+<title>NaukriVexa — Government Jobs, Results & Career Portal</title>
 
-<meta name="description" content="Government Jobs, Results, Admit Card, Exam Calendar, Eligibility Checker, Salary Calculator, Scholarships और Career Tools.">
+<meta name="description" content="NaukriVexa — Government Jobs, Results, Admit Cards, Exam Calendar, Syllabus, Cut Off, Eligibility Checker और Career Tools एक जगह।">
+<meta name="keywords" content="government jobs, sarkari naukri, SSC, Railway, Police, Defence, Results, Admit Card, NaukriVexa">
+
+<meta name="theme-color" content="#080b16">
 
 <style>
-*{box-sizing:border-box}
+
+/* =========================================================
+   NaukriVexa — Next Generation Homepage
+   ========================================================= */
+
+:root{
+    --bg:#f5f7fb;
+    --surface:#ffffff;
+    --surface-2:#f8fafc;
+    --text:#101828;
+    --muted:#667085;
+    --border:#e6eaf0;
+    --dark:#080b16;
+    --dark-2:#111827;
+    --primary:#635bff;
+    --primary-2:#7c3aed;
+    --cyan:#06b6d4;
+    --green:#10b981;
+    --orange:#f59e0b;
+    --red:#ef4444;
+    --shadow:0 10px 35px rgba(15,23,42,.08);
+    --shadow-lg:0 25px 70px rgba(15,23,42,.14);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#172033;
+    font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
 }
 
-header{
-    background:linear-gradient(135deg,#1557d6,#0b3d91);
-    color:white;
-    padding:24px 15px;
+a{
+    color:inherit;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* =========================================================
+   TOP ANNOUNCEMENT
+   ========================================================= */
+
+.topbar{
+    background:#080b16;
+    color:#dbeafe;
+    padding:9px 15px;
     text-align:center;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.1px;
 }
 
-header h1{
-    margin:0;
-    font-size:30px;
+.topbar span{
+    color:#a5b4fc;
 }
 
-header p{
-    margin:7px 0 0;
-    font-size:14px;
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header{
+    position:relative;
+    overflow:hidden;
+    color:white;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(99,91,255,.32),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(6,182,212,.20),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 60% 100%,
+            rgba(124,58,237,.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #080b16 0%,
+            #111827 50%,
+            #17143a 100%
+        );
 }
 
-nav{
-    background:white;
-    padding:12px 10px;
+/* decorative glow */
+
+.header:before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background:rgba(99,91,255,.10);
+    filter:blur(10px);
+    top:-230px;
+    right:-120px;
+}
+
+.header:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(6,182,212,.07);
+    filter:blur(10px);
+    bottom:-200px;
+    left:-100px;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav{
+    max-width:1180px;
+    margin:auto;
+    padding:18px 18px;
     display:flex;
-    gap:18px;
-    overflow:auto;
-    box-shadow:0 2px 8px #ddd;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    position:relative;
+    z-index:5;
 }
 
-nav a{
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
     text-decoration:none;
-    color:#1557d6;
-    font-weight:bold;
-    white-space:nowrap;
+    color:white;
 }
+
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            #635bff,
+            #8b5cf6
+        );
+    box-shadow:
+        0 10px 30px rgba(99,91,255,.35);
+    font-size:21px;
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:-.7px;
+}
+
+.logo-text span{
+    color:#a5b4fc;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:9px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav-links a:hover{
+    background:rgba(255,255,255,.08);
+    color:white;
+}
+
+.nav-home{
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.07);
+}
+
+@media(max-width:760px){
+
+    .nav{
+        padding:15px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .logo-text{
+        font-size:20px;
+    }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
-    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:70px 18px 105px;
     text-align:center;
-    padding:30px 15px;
+    position:relative;
+    z-index:2;
 }
 
-.hero h2{
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:50px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.13);
+    color:#c7d2fe;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:20px;
+    backdrop-filter:blur(14px);
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#34d399;
+    box-shadow:0 0 12px #34d399;
+}
+
+.hero h1{
     margin:0;
-    font-size:25px;
+    font-size:clamp(38px,7vw,72px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    font-weight:950;
 }
 
-.hero p{
-    color:#667085;
-    line-height:1.5;
+.hero h1 .gradient{
+    background:
+        linear-gradient(
+            90deg,
+            #a5b4fc,
+            #c4b5fd,
+            #67e8f9
+        );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
-.search{
-    max-width:650px;
-    margin:18px auto;
+.hero-description{
+    max-width:690px;
+    margin:22px auto 0;
+    color:#aeb9ca;
+    font-size:16px;
+    line-height:1.75;
+}
+
+.hero-actions{
     display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:28px;
 }
 
-.search input{
-    flex:1;
-    padding:14px;
-    border:1px solid #ccd3df;
-    border-radius:9px 0 0 9px;
-    font-size:15px;
+.hero-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:46px;
+    padding:0 18px;
+    border-radius:11px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:800;
 }
 
-.search button{
-    border:0;
-    background:#1557d6;
+.hero-btn-primary{
     color:white;
-    padding:14px 20px;
-    border-radius:0 9px 9px 0;
-    font-weight:bold;
+    background:
+        linear-gradient(
+            135deg,
+            #635bff,
+            #7c3aed
+        );
+    box-shadow:
+        0 12px 28px rgba(99,91,255,.25);
 }
+
+.hero-btn-secondary{
+    color:#e2e8f0;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.06);
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-wrapper{
+    max-width:860px;
+    margin:-45px auto 0;
+    padding:0 16px;
+    position:relative;
+    z-index:10;
+}
+
+.search-card{
+    background:rgba(255,255,255,.96);
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:22px;
+    padding:12px;
+    box-shadow:
+        0 30px 80px rgba(15,23,42,.20);
+    backdrop-filter:blur(20px);
+}
+
+.search-row{
+    display:flex;
+    gap:9px;
+}
+
+.search-input-wrap{
+    flex:1;
+    position:relative;
+}
+
+.search-icon{
+    position:absolute;
+    left:16px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:20px;
+}
+
+#searchBox{
+    width:100%;
+    height:56px;
+    padding:0 45px;
+    border:1px solid #dfe4ec;
+    border-radius:13px;
+    outline:none;
+    background:#f8fafc;
+    color:#101828;
+    font-size:15px;
+    transition:.2s;
+}
+
+#searchBox:focus{
+    background:white;
+    border-color:#756cf8;
+    box-shadow:
+        0 0 0 4px rgba(99,91,255,.10);
+}
+
+.search-clear{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    border:0;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:#e5e7eb;
+    color:#475569;
+    cursor:pointer;
+    display:none;
+    font-weight:900;
+}
+
+.search-button{
+    min-width:115px;
+    border:0;
+    border-radius:13px;
+    color:white;
+    background:
+        linear-gradient(
+            135deg,
+            #635bff,
+            #7c3aed
+        );
+    font-size:14px;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:
+        0 10px 22px rgba(99,91,255,.20);
+}
+
+.quick-search{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:7px;
+    padding:10px 4px 1px;
+}
+
+.quick-label{
+    font-size:11px;
+    color:#98a2b3;
+    font-weight:800;
+}
+
+.quick-search button{
+    border:1px solid #e5e7eb;
+    background:white;
+    color:#475467;
+    padding:6px 10px;
+    border-radius:50px;
+    font-size:11px;
+    font-weight:750;
+    cursor:pointer;
+}
+
+.quick-search button:hover{
+    color:#4f46e5;
+    border-color:#c7d2fe;
+    background:#eef2ff;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding-top:48px;
+        padding-bottom:90px;
+    }
+
+    .hero h1{
+        letter-spacing:-1.8px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .search-row{
+        flex-direction:column;
+    }
+
+    .search-button{
+        height:52px;
+        width:100%;
+    }
+
+    .search-card{
+        border-radius:18px;
+    }
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 .container{
-    max-width:1100px;
+    max-width:1180px;
     margin:auto;
-    padding:18px 15px;
+    padding:25px 16px 70px;
 }
 
-.title{
-    margin:25px 0 13px;
-    font-size:22px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.card{
-    background:white;
-    padding:17px;
-    border-radius:13px;
-    text-decoration:none;
-    color:#172033;
-    box-shadow:0 2px 9px #e0e5ed;
-}
-
-.icon{
-    font-size:27px;
-}
-
-.card h3{
-    margin:8px 0 5px;
-    font-size:17px;
-}
-
-.card p{
-    margin:0;
-    color:#667085;
-    font-size:13px;
-    line-height:1.4;
-}
-
-.highlight{
-    background:#fff8e8;
-    border-left:5px solid #f59e0b;
-    padding:18px;
-    border-radius:12px;
-    margin-top:18px;
-}
-
-.highlight h3{
-    margin:0 0 7px;
-}
+/* =========================================================
+   STATS
+   ========================================================= */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:15px;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
 .stat{
     background:white;
-    padding:15px;
-    text-align:center;
-    border-radius:11px;
-    box-shadow:0 2px 8px #e2e6ed;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:17px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 5px 18px rgba(15,23,42,.04);
 }
 
-.stat b{
+.stat-icon{
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    font-size:21px;
+}
+
+.stat strong{
     display:block;
-    font-size:22px;
-    color:#1557d6;
+    font-size:15px;
+    font-weight:900;
 }
 
 .stat span{
-    font-size:12px;
-    color:#667085;
+    display:block;
+    margin-top:3px;
+    color:var(--muted);
+    font-size:11px;
 }
 
-footer{
-    background:#172033;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
-    margin-top:30px;
+@media(max-width:700px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* =========================================================
+   SECTION HEAD
+   ========================================================= */
+
+.section{
+    margin-top:42px;
+}
+
+.section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:16px;
+}
+
+.section-title{
+    margin:0;
+    font-size:23px;
+    letter-spacing:-.6px;
+}
+
+.section-subtitle{
+    margin:5px 0 0;
+    color:var(--muted);
     font-size:13px;
+    line-height:1.5;
+}
+
+.view-all{
+    color:#4f46e5;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.view-all:hover{
+    text-decoration:underline;
+}
+
+/* =========================================================
+   FEATURE GRID
+   ========================================================= */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.feature{
+    position:relative;
+    overflow:hidden;
+    min-height:190px;
+    padding:22px;
+    border-radius:20px;
+    text-decoration:none;
+    color:white;
+    box-shadow:var(--shadow);
+    transition:.25s ease;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow-lg);
+}
+
+.feature:after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    right:-65px;
+    bottom:-70px;
+    background:rgba(255,255,255,.10);
+}
+
+.feature-purple{
+    background:
+        radial-gradient(circle at 90% 10%,rgba(255,255,255,.20),transparent 25%),
+        linear-gradient(135deg,#4f46e5,#7c3aed);
+}
+
+.feature-blue{
+    background:
+        radial-gradient(circle at 90% 10%,rgba(255,255,255,.20),transparent 25%),
+        linear-gradient(135deg,#0f5fd7,#2563eb);
+}
+
+.feature-dark{
+    background:
+        radial-gradient(circle at 90% 10%,rgba(255,255,255,.16),transparent 25%),
+        linear-gradient(135deg,#111827,#1e293b);
+}
+
+.feature-icon{
+    width:49px;
+    height:49px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.13);
+    font-size:24px;
+}
+
+.feature h3{
+    margin:18px 0 7px;
+    font-size:19px;
+}
+
+.feature p{
+    margin:0;
+    max-width:330px;
+    color:rgba(255,255,255,.78);
+    font-size:12px;
+    line-height:1.6;
+}
+
+.feature-arrow{
+    position:absolute;
+    right:20px;
+    top:22px;
+    font-size:18px;
+}
+
+@media(max-width:850px){
+
+    .feature-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:580px){
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   SERVICE GRID
+   ========================================================= */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.service{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:18px;
+    text-decoration:none;
+    transition:.22s ease;
+    box-shadow:0 4px 16px rgba(15,23,42,.035);
+}
+
+.service:hover{
+    transform:translateY(-3px);
+    border-color:#c7d2fe;
+    box-shadow:0 15px 35px rgba(15,23,42,.09);
+}
+
+.service-icon{
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f1f5f9;
+    font-size:21px;
+}
+
+.service h3{
+    margin:13px 0 5px;
+    font-size:15px;
+}
+
+.service p{
+    margin:0;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.55;
+}
+
+.service-link{
+    display:block;
+    margin-top:12px;
+    color:#4f46e5;
+    font-size:11px;
+    font-weight:900;
+}
+
+@media(max-width:900px){
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+        gap:9px;
+    }
+
+    .service{
+        padding:14px;
+    }
+}
+
+/* =========================================================
+   JOB CATEGORIES
+   ========================================================= */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.category{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:16px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.category:hover{
+    border-color:#c7d2fe;
+    transform:translateY(-2px);
+}
+
+.category-icon{
+    width:42px;
+    height:42px;
+    border-radius:11px;
+    background:#f1f5f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    flex:0 0 auto;
+}
+
+.category h3{
+    margin:0;
+    font-size:14px;
+}
+
+.category p{
+    margin:4px 0 0;
+    color:var(--muted);
+    font-size:10px;
+}
+
+@media(max-width:800px){
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* =========================================================
+   TRENDING
+   ========================================================= */
+
+.trending-box{
+    position:relative;
+    overflow:hidden;
+    padding:22px;
+    border-radius:20px;
+    background:
+        radial-gradient(circle at 90% 0%,rgba(99,91,255,.18),transparent 28%),
+        linear-gradient(135deg,#111827,#1e293b);
+    color:white;
+}
+
+.trending-title{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.trending-title h2{
+    margin:0;
+    font-size:20px;
+}
+
+.trending-box p{
+    margin:6px 0 18px;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+.trending-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+}
+
+.trending-tags a{
+    text-decoration:none;
+    color:#e2e8f0;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.09);
+    padding:9px 12px;
+    border-radius:50px;
+    font-size:11px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.trending-tags a:hover{
+    background:rgba(255,255,255,.13);
+    color:white;
+}
+
+/* =========================================================
+   JOBS FOR ME CTA
+   ========================================================= */
+
+.personal-box{
+    margin-top:15px;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid #dbe4ff;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(99,91,255,.12),transparent 35%),
+        linear-gradient(135deg,#eef2ff,#ffffff);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.personal-content{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.personal-icon{
+    width:52px;
+    height:52px;
+    border-radius:15px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    box-shadow:0 8px 20px rgba(15,23,42,.07);
+}
+
+.personal-box h3{
+    margin:0;
+    font-size:18px;
+}
+
+.personal-box p{
+    margin:5px 0 0;
+    color:#64748b;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.personal-btn{
+    text-decoration:none;
+    background:#111827;
+    color:white;
+    padding:11px 15px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+@media(max-width:600px){
+
+    .personal-box{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .personal-btn{
+        width:100%;
+        text-align:center;
+    }
+}
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.notice{
+    margin-top:35px;
+    padding:17px;
+    border-radius:15px;
+    background:#fffbeb;
+    border:1px solid #fde68a;
+}
+
+.notice strong{
+    font-size:13px;
+}
+
+.notice p{
+    margin:5px 0 0;
+    color:#78716c;
+    font-size:11px;
+    line-height:1.6;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer{
+    margin-top:0;
+    background:#080b16;
+    color:#94a3b8;
+    padding:45px 16px 25px;
+}
+
+.footer-inner{
+    max-width:1180px;
+    margin:auto;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:white;
+    font-weight:900;
+    font-size:19px;
+}
+
+.footer-description{
+    max-width:560px;
+    margin:12px 0 28px;
+    font-size:12px;
     line-height:1.7;
 }
 
-@media(min-width:700px){
-    .grid{
-        grid-template-columns:repeat(4,1fr);
-    }
-
-    .stats{
-        grid-template-columns:repeat(4,1fr);
-    }
+.footer-line{
+    height:1px;
+    background:rgba(255,255,255,.08);
+    margin-bottom:20px;
 }
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    font-size:11px;
+}
+
+.footer-bottom strong{
+    color:#e2e8f0;
+}
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.back-top{
+    position:fixed;
+    right:17px;
+    bottom:17px;
+    width:43px;
+    height:43px;
+    border:0;
+    border-radius:13px;
+    background:#111827;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(15,23,42,.18);
+    display:none;
+    z-index:50;
+    font-size:18px;
+}
+
+.back-top.show{
+    display:block;
+}
+
+/* =========================================================
+   SEARCH SUGGESTION
+   ========================================================= */
+
+.search-message{
+    display:none;
+    margin-top:10px;
+    padding:11px 13px;
+    border-radius:10px;
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    color:#475467;
+    font-size:12px;
+}
+
 </style>
 </head>
 
+
 <body>
 
-<header>
-    <h1>📚 NaukriVexa</h1>
-    <p>Government Jobs • Results • Exams • Career Information</p>
-</header>
 
-<nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="#jobs">💼 Jobs</a>
-    <a href="#results">📋 Results</a>
-    <a href="#admit">🎫 Admit Card</a>
-    <a href="#tools">🧮 Tools</a>
-</nav>
+<!-- =======================================================
+     TOP BAR
+======================================================= -->
 
-<section class="hero">
-
-    <h2>सरकारी नौकरी और Career की पूरी जानकारी एक जगह</h2>
-
-    <p>
-        Jobs, Results, Admit Cards, Eligibility, Salary, Scholarships और Exam Tools
-    </p>
-
-    <<div class="search">
-    <input
-        id="searchBox"
-        type="text"
-        placeholder="SSC CHSL, Railway, Police आदि खोजें..."
-    >
-
-    <button onclick="window.location.href='search.html'">Search</button>
-    </div>
-
-</section>
-
-<main class="container">
-
-    <div class="stats">
-
-        <div class="stat">
-            <b>💼</b>
-            <span>Government Jobs</span>
-        </div>
-
-        <div class="stat">
-            <b>📋</b>
-            <span>Latest Results</span>
-        </div>
-
-        <div class="stat">
-            <b>🎫</b>
-            <span>Admit Cards</span>
-        </div>
-
-        <div class="stat">
-            <b>📅</b>
-            <span>Exam Updates</span>
-        </div>
-
-    </div>
+<div class="topbar">
+    🚀 <span>NaukriVexa</span> — Jobs, Results, Exams & Career Tools एक जगह
+</div>
 
 
-    <div class="highlight">
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
-        <h3>🎯 Jobs For Me</h3>
+<header class="header">
 
-        <p>
-            अपनी Age, Qualification, State, Category और Physical Details
-            के अनुसार Government Jobs खोजें।
-        </p>
+    <nav class="nav">
 
-    </div>
+        <a href="index.html" class="logo">
 
+            <div class="logo-mark">
+                📚
+            </div>
 
-    <h2 class="title" id="jobs">🔥 मुख्य सेवाएँ</h2>
+            <div class="logo-text">
+                Naukri<span>Vexa</span>
+            </div>
 
-    <div class="grid">
-
-        <a class="card" href="#">
-            <div class="icon">🏛️</div>
-            <h3>Government Jobs</h3>
-            <p>नई सरकारी नौकरियों और भर्ती की जानकारी</p>
         </a>
 
-        <a class="card" href="jobs-for-me.html">
-            <div class="icon">🎯</div>
-            <h3>Jobs For Me</h3>
-            <p>अपनी qualification के अनुसार jobs खोजें</p>
-        </a>
-    <a class="card" href="eligibility.html">
-  <div class="icon">✅</div>
-  <h3>Eligibility Checker</h3>
-  <p>Age, Qualification और Physical के अनुसार eligibility check करें</p>
-        </a>
 
-        <a class="card" href="results.html"
-            <div class="icon">📋</div>
-            <h3>Latest Results</h3>
-            <p>सरकारी परीक्षाओं के latest results</p>
-        </a>
+        <div class="nav-links">
 
-        <a class="card" href="admit-card.html"
-            <div class="icon">🎫</div>
-            <h3>Admit Card</h3>
-            <p>Latest admit card और exam updates</p>
-        </a> 
-
-        <a class="card" href="calendar.html">
-            <div class="icon">📅</div>
-            <h3>Exam Calendar</h3>
-            <p>आने वाली परीक्षाओं की dates</p>
-        </a>
-
-        <a class="card" href="syllabus.html">
-            <div class="icon">📚</div>
-            <h3>Syllabus</h3>
-            <p>Exam syllabus और pattern</p>
-        </a>
-
-        <a class="card" href="cutoff.html">
-            <div class="icon">📊</div>
-            <h3>Cut Off</h3>
-            <p>Previous year cutoff information</p>
-        </a>
-
-        <a class="card" href="physical.html">
-            <div class="icon">📏</div>
-            <h3>Physical Checker</h3>
-            <p>Height, Chest और physical eligibility</p>
-        </a>
-
-    </div>
-
-
-    <h2 class="title" id="tools">🧮 Useful Career Tools</h2>
-
-    <div class="grid">
-
-        <a class="card" href="tools.html">
-            <div class="icon">💰</div>
-            <h3>Salary Calculator</h3>
-            <p>Salary और estimated in-hand pay देखें</p>
-        </a>
-
-        <a class="card" href="tools.html">
-    <div class="icon">🎓</div>
-    <h3>Scholarship Finder</h3>
-    <p>Students के लिए scholarship information</p>
-        </a>
-
-        <a class="card" href="tools.html">
-    <div class="icon">📝</div>
-    <h3>Mock Tests</h3>
-    <p>Free exam practice और quizzes</p>
-        </a>
-
-        <a class="card" href="tools.html">
-    <div class="icon">⌨️</div>
-    <h3>Typing Test</h3>
-    <p>Hindi और English typing practice</p>
-        </a>
-
-        <a class="card" href="tools.html">
-            <div class="icon">🧮</div>
-            <h3>Percentage Calculator</h3>
-            <p>Marks और percentage calculate करें</p>
-        </a>
-
-        <a class="card" href="tools.html">
-    <div class="icon">🎂</div>
-    <h3>Age Calculator</h3>
-    <p>अपनी exact age calculate करें</p>
-        </a>
-
-        <a class="card" href="tools.html">
-            <div class="icon">📐</div>
-            <h3>Height Converter</h3>
-            <p>Feet और CM में height बदलें</p>
-        </a>
-
-        <a class="card" href="tools.html">
-            <div class="icon">⚖️</div>
-            <h3>BMI Calculator</h3>
-            <p>Height और weight के आधार पर BMI</p>
-        </a>
-
-    </div>
-
-
-    <h2 class="title">🎓 Jobs By Qualification</h2>
-
-    <div class="grid">
-
-        <a class="card" href="8th-jobs.html">
-    <h3>8th Pass Jobs</h3>
-    <p>8वीं पास candidates के लिए</p>
-        </a>
-
-        <a class="card" href="10th-jobs.html">
-    <h3>10th Pass Jobs</h3>
-    <p>10वीं पास सरकारी नौकरियाँ</p>
-        </a>
-
-        <a class="card" href="12th-jobs.html">
-    <h3>12th Pass Jobs</h3>
-    <p>12वीं पास भर्ती</p>
-        </a>
-
-        <a class="card" href="graduate-jobs.html">
-    <h3>Graduate Jobs</h3>
-    <p>Graduation के बाद सरकारी jobs</p>
-        </a>
-
-    </div>
-
-
-    <h2 class="title">🔥 Trending Exams</h2>
-
-    <div class="grid">
-
-        <a class="card" href="#">
-            <h3>SSC</h3>
-            <p>CGL • CHSL • GD • MTS • CPO</p>
-        </a>
-
-        <a class="card" href="#">
-            <h3>Railway</h3>
-            <p>RRB NTPC • Group D • ALP</p>
-        </a>
-
-        <a class="card" href="#">
-            <h3>Police</h3>
-            <p>Police और CAPF भर्ती</p>
-        </a>
-
-        <a class="card" href="#">
-            <h3>Defence</h3>
-            <p>Army • Navy • Air Force</p>
-        </a>
-
-    </div>
-
-</main>
-
-
-<footer>
-
-    <p><b>📚 NaukriVexa</b></p>
-
-    <p>
-        Government Jobs • Results • Exams • Career Tools
-    </p>
-
-    <p>© 2026 NaukriVexa</p>
-
-</footer>
-
-
-<script>
-
-function searchSite(){
-
-    let q = document.getElementById("searchBox").value.trim();
-
-    if(q === ""){
-        alert("कृपया कोई Job या Exam लिखें।");
-        return;
-    }
-
-    alert(
-        "NaukriVexa Search: " + q +
-        "\n\nAdvanced Search System जल्द जोड़ा जाएगा।"
-    );
-
-}
-
-</script>
-
-</body>
-</html>
+   
