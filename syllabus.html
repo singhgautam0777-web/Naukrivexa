@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syllabus - NaukriVexa</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.container{
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+    margin-bottom:15px;
+}
+.exam{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.exam h2{
+    margin-top:0;
+}
+.subject{
+    display:inline-block;
+    background:#eef2ff;
+    padding:7px 10px;
+    margin:3px;
+    border-radius:20px;
+    font-size:14px;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📚 Exam Syllabus</h1>
+<p>NaukriVexa पर परीक्षा का syllabus</p>
+</header>
+
+<div class="container">
+
+<input class="search" type="text" id="search"
+placeholder="🔎 Exam search करें..." onkeyup="searchSyllabus()">
+
+<div id="syllabus">
+
+<div class="exam">
+<h2>SSC CGL</h2>
+<span class="subject">General Intelligence</span>
+<span class="subject">Reasoning</span>
+<span class="subject">Quantitative Aptitude</span>
+<span class="subject">English</span>
+<span class="subject">General Awareness</span>
+<p>SSC CGL का detailed syllabus official notification के अनुसार verify करें।</p>
+</div>
+
+<div class="exam">
+<h2>SSC CHSL</h2>
+<span class="subject">English</span>
+<span class="subject">General Intelligence</span>
+<span class="subject">Quantitative Aptitude</span>
+<span class="subject">General Awareness</span>
+<p>SSC CHSL का detailed syllabus official notification के अनुसार verify करें।</p>
+</div>
+
+<div class="exam">
+<h2>SSC MTS</h2>
+<span class="subject">Numerical Ability</span>
+<span class="subject">Reasoning</span>
+<span class="subject">General Awareness</span>
+<span class="subject">English</span>
+<p>SSC MTS का detailed syllabus official notification के अनुसार verify करें।</p>
+</div>
+
+<div class="exam">
+<h2>Railway Exams</h2>
+<span class="subject">Mathematics</span>
+<span class="subject">Reasoning</span>
+<span class="subject">General Awareness</span>
+<span class="subject">General Science</span>
+<p>Railway exam का exact syllabus संबंधित RRB notification से verify करें।</p>
+</div>
+
+<div class="exam">
+<h2>Police Exams</h2>
+<span class="subject">General Knowledge</span>
+<span class="subject">Reasoning</span>
+<span class="subject">Mathematics</span>
+<span class="subject">Current Affairs</span>
+<p>Police recruitment का syllabus राज्य और भर्ती के अनुसार अलग हो सकता है।</p>
+</div>
+
+<div class="exam">
+<h2>Defence Exams</h2>
+<span class="subject">Mathematics</span>
+<span class="subject">English</span>
+<span class="subject">General Knowledge</span>
+<span class="subject">Science</span>
+<p>Defence exam का exact syllabus संबंधित official notification से verify करें।</p>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+
+<script>
+function searchSyllabus(){
+    let input=document.getElementById("search").value.toLowerCase();
+    let exams=document.querySelectorAll(".exam");
+
+    exams.forEach(function(exam){
+        let text=exam.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            exam.style.display="block";
+        }else{
+            exam.style.display="none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
