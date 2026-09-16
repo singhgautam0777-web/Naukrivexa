@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Search Jobs, Results & Admit Cards | NaukriVexa</title>
-<meta name="description" content="Search government jobs, results, admit cards, cut offs and syllabus on NaukriVexa.">
-<meta name="theme-color" content="#0f172a">
+<meta name="description" content="NaukriVexa Search - Government Jobs, Results, Admit Cards, Cut Off and Syllabus">
+<title>Search Jobs & Exams | NaukriVexa</title>
 
 <style>
 *{
@@ -15,24 +13,21 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
     color:#172033;
-    min-height:100vh;
 }
 
-/* HEADER */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
 .header{
-    background:
-    radial-gradient(circle at top right,rgba(99,102,241,.35),transparent 35%),
-    linear-gradient(135deg,#0f172a,#172554 55%,#312e81);
+    background:linear-gradient(135deg,#111827,#1e3a8a);
     color:white;
-    padding:22px 16px 55px;
+    padding:18px 16px 26px;
     position:relative;
     overflow:hidden;
 }
@@ -43,24 +38,13 @@ body{
     width:220px;
     height:220px;
     border-radius:50%;
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.08);
     right:-80px;
-    top:-90px;
+    top:-100px;
 }
 
-.header:after{
-    content:"";
-    position:absolute;
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    background:rgba(255,255,255,.04);
-    left:-70px;
-    bottom:-100px;
-}
-
-.nav{
-    max-width:1100px;
+.top{
+    max-width:1000px;
     margin:auto;
     display:flex;
     align-items:center;
@@ -70,486 +54,303 @@ body{
 }
 
 .logo{
-    text-decoration:none;
-    color:white;
-    font-size:24px;
-    font-weight:900;
-    letter-spacing:-.5px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:800;
 }
 
-.logo span{
-    color:#a5b4fc;
+.logo-icon{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:white;
+    color:#1d4ed8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:19px;
 }
 
 .home-btn{
-    text-decoration:none;
-    color:white;
     border:1px solid rgba(255,255,255,.25);
-    background:rgba(255,255,255,.08);
     padding:9px 14px;
     border-radius:10px;
     font-size:14px;
-    font-weight:700;
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.08);
 }
 
 .hero{
-    max-width:900px;
-    margin:45px auto 0;
+    max-width:850px;
+    margin:28px auto 0;
     text-align:center;
     position:relative;
     z-index:2;
 }
 
-.hero-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:7px 13px;
-    border:1px solid rgba(255,255,255,.18);
-    background:rgba(255,255,255,.08);
-    border-radius:50px;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:16px;
-}
-
 .hero h1{
-    font-size:clamp(30px,7vw,52px);
-    line-height:1.05;
-    letter-spacing:-1.5px;
-    margin-bottom:14px;
+    font-size:32px;
+    margin-bottom:8px;
 }
 
 .hero p{
-    color:#cbd5e1;
-    font-size:15px;
-    line-height:1.7;
-    max-width:650px;
-    margin:auto;
+    color:#dbeafe;
+    font-size:14px;
 }
 
-/* SEARCH BOX */
 .search-area{
-    max-width:900px;
-    margin:-31px auto 0;
+    max-width:850px;
+    margin:-25px auto 0;
     padding:0 16px;
     position:relative;
     z-index:5;
 }
 
-.search-card{
+.search-box{
     background:white;
-    border-radius:20px;
-    padding:12px;
-    box-shadow:0 20px 55px rgba(15,23,42,.15);
-    border:1px solid #e7eaf0;
-}
-
-.search-row{
+    padding:10px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(15,23,42,.15);
     display:flex;
-    gap:9px;
+    gap:8px;
 }
 
-.search-input-wrap{
+.search-box input{
     flex:1;
-    position:relative;
-}
-
-.search-icon{
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:20px;
-    pointer-events:none;
-}
-
-#searchInput{
-    width:100%;
-    height:54px;
-    border:2px solid #e5e7eb;
-    border-radius:13px;
-    padding:0 42px 0 45px;
-    font-size:16px;
-    outline:none;
-    color:#111827;
-    background:#fafafa;
-    transition:.2s;
-}
-
-#searchInput:focus{
-    border-color:#6366f1;
-    background:white;
-    box-shadow:0 0 0 4px rgba(99,102,241,.10);
-}
-
-.clear-btn{
-    position:absolute;
-    right:12px;
-    top:50%;
-    transform:translateY(-50%);
     border:0;
-    background:#e5e7eb;
-    width:25px;
-    height:25px;
-    border-radius:50%;
-    cursor:pointer;
-    display:none;
-    font-weight:bold;
-    color:#475569;
+    outline:0;
+    font-size:16px;
+    padding:13px 12px;
+    min-width:0;
 }
 
 .search-btn{
-    height:54px;
-    padding:0 23px;
     border:0;
-    border-radius:13px;
+    background:#2563eb;
     color:white;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    font-weight:800;
-    font-size:15px;
-    cursor:pointer;
-    box-shadow:0 8px 18px rgba(79,70,229,.25);
-}
-
-.search-btn:active{
-    transform:scale(.98);
-}
-
-/* QUICK SEARCH */
-.quick{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:12px;
-    padding:0 4px;
-}
-
-.quick span{
-    font-size:12px;
-    color:#64748b;
+    border-radius:12px;
+    padding:0 18px;
     font-weight:700;
-    margin-right:2px;
-}
-
-.quick button{
-    border:1px solid #e2e8f0;
-    background:#f8fafc;
-    color:#334155;
-    border-radius:50px;
-    padding:7px 11px;
-    font-size:12px;
     cursor:pointer;
-    font-weight:700;
 }
 
-.quick button:hover{
+.clear-btn{
+    display:none;
+    border:0;
     background:#eef2ff;
-    border-color:#c7d2fe;
-    color:#4338ca;
+    color:#334155;
+    border-radius:10px;
+    padding:0 13px;
+    cursor:pointer;
 }
 
-/* MAIN */
-.container{
-    max-width:1100px;
-    margin:32px auto 70px;
+.quick{
+    max-width:850px;
+    margin:20px auto;
     padding:0 16px;
 }
 
-.top-line{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    margin-bottom:18px;
+.quick-title{
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
-.heading h2{
-    font-size:22px;
-    letter-spacing:-.4px;
-}
-
-.heading p{
-    color:#64748b;
-    font-size:13px;
-    margin-top:4px;
-}
-
-.result-count{
-    background:#eef2ff;
-    color:#4338ca;
-    border:1px solid #e0e7ff;
-    border-radius:50px;
-    padding:8px 12px;
-    font-size:12px;
-    font-weight:800;
-    white-space:nowrap;
-}
-
-/* FILTERS */
-.filters{
+.quick-list{
     display:flex;
     gap:8px;
     overflow-x:auto;
-    padding-bottom:8px;
-    margin-bottom:22px;
-    scrollbar-width:none;
+    padding-bottom:5px;
 }
 
-.filters::-webkit-scrollbar{
-    display:none;
+.quick-list button{
+    white-space:nowrap;
+    border:1px solid #dbe2ea;
+    background:white;
+    border-radius:30px;
+    padding:9px 14px;
+    cursor:pointer;
+    color:#334155;
+}
+
+.filters{
+    max-width:850px;
+    margin:0 auto 18px;
+    padding:0 16px;
+}
+
+.filter-list{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
 }
 
 .filter{
-    flex:0 0 auto;
-    border:1px solid #e2e8f0;
+    border:1px solid #dbe2ea;
     background:white;
-    color:#475569;
     padding:9px 14px;
-    border-radius:50px;
-    font-size:13px;
-    font-weight:700;
+    border-radius:30px;
+    white-space:nowrap;
     cursor:pointer;
+    font-weight:600;
+    color:#475569;
 }
 
 .filter.active{
-    background:#111827;
+    background:#2563eb;
     color:white;
-    border-color:#111827;
+    border-color:#2563eb;
 }
 
-/* RESULTS GRID */
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:0 16px 50px;
+}
+
+.result-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+    font-size:14px;
+    color:#64748b;
+}
+
 .results{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
+    gap:12px;
 }
 
 .card{
     background:white;
-    border:1px solid #e7eaf0;
-    border-radius:18px;
-    padding:19px;
-    position:relative;
-    transition:.25s ease;
-    box-shadow:0 5px 18px rgba(15,23,42,.04);
+    border:1px solid #e5e7eb;
+    border-radius:17px;
+    padding:17px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    transition:.2s;
 }
 
 .card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 16px 35px rgba(15,23,42,.10);
-    border-color:#c7d2fe;
+    transform:translateY(-2px);
+    box-shadow:0 8px 25px rgba(15,23,42,.08);
 }
 
-.card-top{
+.card-left{
     display:flex;
-    justify-content:space-between;
+    gap:13px;
     align-items:flex-start;
-    gap:10px;
 }
 
-.card-icon{
-    width:46px;
-    height:46px;
+.icon{
+    width:44px;
+    height:44px;
     border-radius:13px;
+    background:#eff6ff;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
-    background:#eef2ff;
-}
-
-.type{
-    font-size:10px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:.7px;
-    color:#6366f1;
-    background:#eef2ff;
-    padding:6px 8px;
-    border-radius:7px;
+    font-size:21px;
+    flex-shrink:0;
 }
 
 .card h3{
-    margin-top:15px;
-    font-size:18px;
-    color:#111827;
+    font-size:16px;
+    margin-bottom:5px;
 }
 
 .card p{
-    color:#64748b;
     font-size:13px;
-    line-height:1.6;
+    color:#64748b;
+    line-height:1.45;
+}
+
+.badge{
+    display:inline-block;
     margin-top:7px;
-    min-height:42px;
-}
-
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:13px;
-}
-
-.tag{
-    background:#f8fafc;
-    border:1px solid #e2e8f0;
+    padding:4px 8px;
+    border-radius:7px;
+    background:#f1f5f9;
     color:#475569;
-    padding:5px 8px;
-    border-radius:6px;
     font-size:11px;
     font-weight:700;
 }
 
-.card-btn{
-    display:block;
-    text-align:center;
-    margin-top:17px;
-    text-decoration:none;
-    background:#111827;
-    color:white;
-    padding:11px 13px;
-    border-radius:10px;
-    font-size:13px;
-    font-weight:800;
-    transition:.2s;
+.arrow{
+    color:#2563eb;
+    font-size:22px;
 }
 
-.card-btn:hover{
-    background:#312e81;
-}
-
-/* EMPTY */
-.empty{
+.no-results{
     display:none;
     text-align:center;
     background:white;
-    border:1px solid #e7eaf0;
-    border-radius:20px;
-    padding:45px 20px;
-}
-
-.empty-icon{
-    width:65px;
-    height:65px;
-    margin:auto;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#f1f5f9;
-    font-size:28px;
-}
-
-.empty h3{
-    margin-top:15px;
-    font-size:19px;
-}
-
-.empty p{
-    margin:7px auto 17px;
-    color:#64748b;
-    font-size:13px;
-    max-width:450px;
-    line-height:1.6;
-}
-
-.show-all{
-    display:inline-block;
-    background:#111827;
-    color:white;
-    text-decoration:none;
-    padding:10px 16px;
-    border-radius:9px;
-    font-size:13px;
-    font-weight:800;
-}
-
-/* INFO */
-.info{
-    margin-top:35px;
-    background:linear-gradient(135deg,#eef2ff,#f8fafc);
-    border:1px solid #dbe4ff;
     border-radius:18px;
-    padding:20px;
+    padding:35px 20px;
+    border:1px solid #e5e7eb;
 }
 
-.info h3{
-    font-size:17px;
+.no-results .big{
+    font-size:38px;
+    margin-bottom:10px;
 }
 
-.info p{
+.no-results h3{
+    margin-bottom:7px;
+}
+
+.no-results p{
     color:#64748b;
-    font-size:13px;
-    line-height:1.7;
-    margin-top:7px;
+    font-size:14px;
 }
 
-/* FOOTER */
 .footer{
-    background:#0f172a;
-    color:#94a3b8;
+    background:#111827;
+    color:#cbd5e1;
     text-align:center;
-    padding:28px 16px;
+    padding:25px 15px;
     font-size:12px;
 }
 
-.footer strong{
-    color:white;
-}
-
-/* MOBILE */
-@media(max-width:850px){
-    .results{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
 @media(max-width:600px){
-    .header{
-        padding-bottom:52px;
-    }
-
-    .logo{
-        font-size:21px;
-    }
-
-    .home-btn{
-        font-size:12px;
-        padding:8px 11px;
-    }
-
-    .hero{
-        margin-top:38px;
-    }
 
     .hero h1{
-        font-size:35px;
+        font-size:26px;
     }
 
-    .hero p{
-        font-size:13px;
+    .search-box{
+        padding:7px;
     }
 
-    .search-row{
-        flex-direction:column;
+    .search-box input{
+        font-size:14px;
+        padding:11px 8px;
     }
 
     .search-btn{
-        width:100%;
+        padding:0 13px;
+        font-size:13px;
     }
 
-    .results{
-        grid-template-columns:1fr;
+    .clear-btn{
+        padding:0 9px;
     }
 
-    .top-line{
-        align-items:flex-start;
+    .card{
+        padding:14px;
     }
 
-    .heading h2{
-        font-size:20px;
+    .card h3{
+        font-size:15px;
+    }
+
+    .arrow{
+        font-size:19px;
     }
 }
 </style>
@@ -559,130 +360,116 @@ body{
 
 <header class="header">
 
-    <nav class="nav">
+    <div class="top">
+
         <a href="index.html" class="logo">
-            Naukri<span>Vexa</span>
+            <div class="logo-icon">NV</div>
+            <span>NaukriVexa</span>
         </a>
 
-        <a href="index.html" class="home-btn">
-            🏠 Home
-        </a>
-    </nav>
+        <a href="index.html" class="home-btn">← Home</a>
+
+    </div>
 
     <div class="hero">
-
-        <div class="hero-badge">
-            🔎 NaukriVexa Smart Search
-        </div>
-
-        <h1>Find What You Need</h1>
-
-        <p>
-            Government Jobs, Results, Admit Cards, Cut Off,
-            Syllabus और career information एक ही जगह खोजें।
-        </p>
-
+        <h1>🔎 Search NaukriVexa</h1>
+        <p>Jobs, Results, Admit Card, Cut Off और Syllabus एक जगह खोजें</p>
     </div>
 
 </header>
 
 
-<section class="search-area">
+<div class="search-area">
 
-    <div class="search-card">
+    <div class="search-box">
 
-        <div class="search-row">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="जैसे SSC CHSL, Railway, Police..."
+            autocomplete="off"
+        >
 
-            <div class="search-input-wrap">
+        <button
+            class="clear-btn"
+            id="clearBtn"
+            onclick="clearSearch()"
+        >
+            ✕
+        </button>
 
-                <span class="search-icon">🔍</span>
-
-                <input
-                    id="searchInput"
-                    type="search"
-                    autocomplete="off"
-                    placeholder="Search SSC CHSL, Railway, Police..."
-                    aria-label="Search NaukriVexa"
-                >
-
-                <button
-                    class="clear-btn"
-                    id="clearBtn"
-                    type="button"
-                    onclick="clearSearch()"
-                >×</button>
-
-            </div>
-
-            <button
-                class="search-btn"
-                type="button"
-                onclick="runSearch()"
-            >
-                🔍 Search
-            </button>
-
-        </div>
-
-        <div class="quick">
-
-            <span>Popular:</span>
-
-            <button onclick="quickSearch('SSC CGL')">SSC CGL</button>
-            <button onclick="quickSearch('SSC CHSL')">SSC CHSL</button>
-            <button onclick="quickSearch('SSC MTS')">SSC MTS</button>
-            <button onclick="quickSearch('Railway')">Railway</button>
-            <button onclick="quickSearch('Police')">Police</button>
-            <button onclick="quickSearch('Defence')">Defence</button>
-
-        </div>
+        <button
+            class="search-btn"
+            onclick="runSearch()"
+        >
+            Search
+        </button>
 
     </div>
 
-</section>
+</div>
+
+
+<div class="quick">
+
+    <div class="quick-title">🔥 Quick Search</div>
+
+    <div class="quick-list">
+
+        <button onclick="quickSearch('SSC CGL')">SSC CGL</button>
+        <button onclick="quickSearch('SSC CHSL')">SSC CHSL</button>
+        <button onclick="quickSearch('SSC MTS')">SSC MTS</button>
+        <button onclick="quickSearch('Railway')">Railway</button>
+        <button onclick="quickSearch('Police')">Police</button>
+        <button onclick="quickSearch('Defence')">Defence</button>
+
+    </div>
+
+</div>
+
+
+<div class="filters">
+
+    <div class="filter-list">
+
+        <button class="filter active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter" data-filter="jobs">
+            Jobs
+        </button>
+
+        <button class="filter" data-filter="results">
+            Results
+        </button>
+
+        <button class="filter" data-filter="admit">
+            Admit Card
+        </button>
+
+        <button class="filter" data-filter="cutoff">
+            Cut Off
+        </button>
+
+        <button class="filter" data-filter="syllabus">
+            Syllabus
+        </button>
+
+    </div>
+
+</div>
 
 
 <main class="container">
 
-    <div class="top-line">
+    <div class="result-info">
 
-        <div class="heading">
-            <h2 id="sectionTitle">Explore NaukriVexa</h2>
-            <p id="sectionText">Search from jobs, results, admit cards and more.</p>
-        </div>
+        <span id="resultText">
+            सभी उपलब्ध जानकारी
+        </span>
 
-        <div class="result-count" id="resultCount">
-            18 Results
-        </div>
-
-    </div>
-
-
-    <div class="filters">
-
-        <button class="filter active" onclick="setFilter('all',this)">
-            All
-        </button>
-
-        <button class="filter" onclick="setFilter('job',this)">
-            💼 Jobs
-        </button>
-
-        <button class="filter" onclick="setFilter('result',this)">
-            📊 Results
-        </button>
-
-        <button class="filter" onclick="setFilter('admit',this)">
-            🎫 Admit Card
-        </button>
-
-        <button class="filter" onclick="setFilter('cutoff',this)">
-            📈 Cut Off
-        </button>
-
-        <button class="filter" onclick="setFilter('syllabus',this)">
-            📚 Syllabus
-        </button>
+        <span id="resultCount"></span>
 
     </div>
 
@@ -692,268 +479,631 @@ body{
 
         <!-- JOBS -->
 
-        <article class="card" data-type="job" data-search="ssc cgl staff selection commission graduate government job">
-            <div class="card-top">
-                <div class="card-icon">💼</div>
-                <span class="type">Job</span>
+        <a class="card result-card"
+           data-category="jobs"
+           href="job.html">
+
+            <div class="card-left">
+
+                <div class="icon">📋</div>
+
+                <div>
+
+                    <h3>SSC CGL Jobs</h3>
+
+                    <p>
+                        SSC CGL Government Jobs, posts,
+                        eligibility और vacancy information.
+                    </p>
+
+                    <span class="badge">Jobs</span>
+
+                </div>
+
             </div>
 
-            <h3>SSC CGL</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                Graduate level government recruitment
-                information, eligibility and selection process.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">Graduate</span>
-                <span class="tag">SSC</span>
-                <span class="tag">Govt Job</span>
+
+        <a class="card result-card"
+           data-category="jobs"
+           href="chsl.html">
+
+            <div class="card-left">
+
+                <div class="icon">📝</div>
+
+                <div>
+
+                    <h3>SSC CHSL Jobs</h3>
+
+                    <p>
+                        CHSL LDC, JSA और DEO related
+                        government job information.
+                    </p>
+
+                    <span class="badge">Jobs</span>
+
+                </div>
+
             </div>
 
-            <a href="job.html" class="card-btn">
-                View Details →
-            </a>
-        </article>
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <article class="card" data-type="job" data-search="ssc chsl 12th government job ldc jsa deo">
-            <div class="card-top">
-                <div class="card-icon">📝</div>
-                <span class="type">Job</span>
+        <a class="card result-card"
+           data-category="jobs"
+           href="mts.html">
+
+            <div class="card-left">
+
+                <div class="icon">📑</div>
+
+                <div>
+
+                    <h3>SSC MTS Jobs</h3>
+
+                    <p>
+                        SSC MTS और Havaldar recruitment
+                        information.
+                    </p>
+
+                    <span class="badge">Jobs</span>
+
+                </div>
+
             </div>
 
-            <h3>SSC CHSL</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                12th pass government recruitment including
-                LDC, JSA and DEO related information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">12th Pass</span>
-                <span class="tag">SSC</span>
-                <span class="tag">CHSL</span>
+
+        <a class="card result-card"
+           data-category="jobs"
+           href="railway.html">
+
+            <div class="card-left">
+
+                <div class="icon">🚆</div>
+
+                <div>
+
+                    <h3>Railway Jobs</h3>
+
+                    <p>
+                        Railway recruitment और
+                        government job information.
+                    </p>
+
+                    <span class="badge">Jobs</span>
+
+                </div>
+
             </div>
 
-            <a href="chsl.html" class="card-btn">
-                View Details →
-            </a>
-        </article>
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <article class="card" data-type="job" data-search="ssc mts multi tasking staff 10th government job">
-            <div class="card-top">
-                <div class="card-icon">📋</div>
-                <span class="type">Job</span>
+        <a class="card result-card"
+           data-category="jobs"
+           href="police.html">
+
+            <div class="card-left">
+
+                <div class="icon">👮</div>
+
+                <div>
+
+                    <h3>Police Jobs</h3>
+
+                    <p>
+                        Police recruitment, eligibility
+                        और vacancy information.
+                    </p>
+
+                    <span class="badge">Jobs</span>
+
+                </div>
+
             </div>
 
-            <h3>SSC MTS</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                10th pass government recruitment and
-                selection information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">10th Pass</span>
-                <span class="tag">SSC</span>
-                <span class="tag">MTS</span>
+
+        <a class="card result-card"
+           data-category="jobs"
+           href="defence.html">
+
+            <div class="card-left">
+
+                <div class="icon">🪖</div>
+
+                <div>
+
+                    <h3>Defence Jobs</h3>
+
+                    <p>
+                        Army, Air Force, Navy और
+                        Defence recruitment information.
+                    </p>
+
+                    <span class="badge">Jobs</span>
+
+                </div>
+
             </div>
 
-            <a href="mts.html" class="card-btn">
-                View Details →
-            </a>
-        </article>
+            <div class="arrow">›</div>
 
-
-        <article class="card" data-type="job" data-search="railway rrb rrc ntpc group d alp technician government job">
-            <div class="card-top">
-                <div class="card-icon">🚆</div>
-                <span class="type">Job</span>
-            </div>
-
-            <h3>Railway Recruitment</h3>
-
-            <p>
-                RRB and RRC recruitment including NTPC,
-                Group D, ALP and Technician.
-            </p>
-
-            <div class="tags">
-                <span class="tag">Railway</span>
-                <span class="tag">RRB</span>
-                <span class="tag">RRC</span>
-            </div>
-
-            <a href="railway.html" class="card-btn">
-                View Details →
-            </a>
-        </article>
-
-
-        <article class="card" data-type="job" data-search="police constable si state police government job">
-            <div class="card-top">
-                <div class="card-icon">👮</div>
-                <span class="type">Job</span>
-            </div>
-
-            <h3>Police Recruitment</h3>
-
-            <p>
-                Police Constable, SI and other police
-                recruitment information.
-            </p>
-
-            <div class="tags">
-                <span class="tag">Police</span>
-                <span class="tag">Constable</span>
-                <span class="tag">SI</span>
-            </div>
-
-            <a href="police.html" class="card-btn">
-                View Details →
-            </a>
-        </article>
-
-
-        <article class="card" data-type="job" data-search="defence army navy air force government defence job">
-            <div class="card-top">
-                <div class="card-icon">🪖</div>
-                <span class="type">Job</span>
-            </div>
-
-            <h3>Defence Recruitment</h3>
-
-            <p>
-                Army, Navy, Air Force and other defence
-                recruitment information.
-            </p>
-
-            <div class="tags">
-                <span class="tag">Defence</span>
-                <span class="tag">Army</span>
-                <span class="tag">Navy</span>
-            </div>
-
-            <a href="defence.html" class="card-btn">
-                View Details →
-            </a>
-        </article>
+        </a>
 
 
         <!-- RESULTS -->
 
-        <article class="card" data-type="result" data-search="ssc cgl result result pdf merit list cutoff">
-            <div class="card-top">
-                <div class="card-icon">📊</div>
-                <span class="type">Result</span>
+
+        <a class="card result-card"
+           data-category="results"
+           href="cgl-result.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎯</div>
+
+                <div>
+
+                    <h3>SSC CGL Result</h3>
+
+                    <p>
+                        SSC CGL result और result related
+                        information.
+                    </p>
+
+                    <span class="badge">Result</span>
+
+                </div>
+
             </div>
 
-            <h3>SSC CGL Result</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                SSC CGL result, merit list and result
-                checking information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">CGL</span>
-                <span class="tag">Result</span>
-                <span class="tag">Merit</span>
+
+        <a class="card result-card"
+           data-category="results"
+           href="chsl-result.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎯</div>
+
+                <div>
+
+                    <h3>SSC CHSL Result</h3>
+
+                    <p>
+                        CHSL result और selection related
+                        information.
+                    </p>
+
+                    <span class="badge">Result</span>
+
+                </div>
+
             </div>
 
-            <a href="cgl-result.html" class="card-btn">
-                Check Result →
-            </a>
-        </article>
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <article class="card" data-type="result" data-search="ssc chsl result ldc jsa deo result">
-            <div class="card-top">
-                <div class="card-icon">📊</div>
-                <span class="type">Result</span>
+        <a class="card result-card"
+           data-category="results"
+           href="mts-result.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎯</div>
+
+                <div>
+
+                    <h3>SSC MTS Result</h3>
+
+                    <p>
+                        SSC MTS result information.
+                    </p>
+
+                    <span class="badge">Result</span>
+
+                </div>
+
             </div>
 
-            <h3>SSC CHSL Result</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                CHSL result, merit list and result
-                checking information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">CHSL</span>
-                <span class="tag">Result</span>
-                <span class="tag">Merit</span>
+
+        <a class="card result-card"
+           data-category="results"
+           href="railway-result.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎯</div>
+
+                <div>
+
+                    <h3>Railway Result</h3>
+
+                    <p>
+                        Railway exam result information.
+                    </p>
+
+                    <span class="badge">Result</span>
+
+                </div>
+
             </div>
 
-            <a href="chsl-result.html" class="card-btn">
-                Check Result →
-            </a>
-        </article>
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <article class="card" data-type="result" data-search="ssc mts result multi tasking result">
-            <div class="card-top">
-                <div class="card-icon">📊</div>
-                <span class="type">Result</span>
+        <a class="card result-card"
+           data-category="results"
+           href="police-result.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎯</div>
+
+                <div>
+
+                    <h3>Police Result</h3>
+
+                    <p>
+                        Police recruitment result information.
+                    </p>
+
+                    <span class="badge">Result</span>
+
+                </div>
+
             </div>
 
-            <h3>SSC MTS Result</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                SSC MTS result and merit list information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">MTS</span>
-                <span class="tag">Result</span>
+
+        <a class="card result-card"
+           data-category="results"
+           href="defence-result.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎯</div>
+
+                <div>
+
+                    <h3>Defence Result</h3>
+
+                    <p>
+                        Defence recruitment result information.
+                    </p>
+
+                    <span class="badge">Result</span>
+
+                </div>
+
             </div>
 
-            <a href="mts-result.html" class="card-btn">
-                Check Result →
-            </a>
-        </article>
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <article class="card" data-type="result" data-search="railway rrb rrc result ntpc group d result">
-            <div class="card-top">
-                <div class="card-icon">🚆</div>
-                <span class="type">Result</span>
+        <!-- ADMIT CARDS -->
+
+
+        <a class="card result-card"
+           data-category="admit"
+           href="cgl-admit-card.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎫</div>
+
+                <div>
+
+                    <h3>SSC CGL Admit Card</h3>
+
+                    <p>
+                        SSC CGL admit card information.
+                    </p>
+
+                    <span class="badge">Admit Card</span>
+
+                </div>
+
             </div>
 
-            <h3>Railway Result</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                RRB/RRC railway examination result
-                and merit list information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">Railway</span>
-                <span class="tag">RRB</span>
+
+        <a class="card result-card"
+           data-category="admit"
+           href="chsl-admit-card.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎫</div>
+
+                <div>
+
+                    <h3>SSC CHSL Admit Card</h3>
+
+                    <p>
+                        CHSL admit card information.
+                    </p>
+
+                    <span class="badge">Admit Card</span>
+
+                </div>
+
             </div>
 
-            <a href="railway-result.html" class="card-btn">
-                Check Result →
-            </a>
-        </article>
+            <div class="arrow">›</div>
+
+        </a>
 
 
-        <article class="card" data-type="result" data-search="police result constable si police result">
-            <div class="card-top">
-                <div class="card-icon">👮</div>
-                <span class="type">Result</span>
+        <a class="card result-card"
+           data-category="admit"
+           href="mts-admit-card.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎫</div>
+
+                <div>
+
+                    <h3>SSC MTS Admit Card</h3>
+
+                    <p>
+                        MTS admit card information.
+                    </p>
+
+                    <span class="badge">Admit Card</span>
+
+                </div>
+
             </div>
 
-            <h3>Police Result</h3>
+            <div class="arrow">›</div>
 
-            <p>
-                Police recruitment result and merit
-                list information.
-            </p>
+        </a>
 
-            <div class="tags">
-                <span class="tag">Police</span>
-                <span class="tag">Re
+
+        <a class="card result-card"
+           data-category="admit"
+           href="railway-admit-card.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎫</div>
+
+                <div>
+
+                    <h3>Railway Admit Card</h3>
+
+                    <p>
+                        Railway admit card information.
+                    </p>
+
+                    <span class="badge">Admit Card</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card result-card"
+           data-category="admit"
+           href="police-admit-card.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎫</div>
+
+                <div>
+
+                    <h3>Police Admit Card</h3>
+
+                    <p>
+                        Police admit card information.
+                    </p>
+
+                    <span class="badge">Admit Card</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card result-card"
+           data-category="admit"
+           href="defence-admit-card.html">
+
+            <div class="card-left">
+
+                <div class="icon">🎫</div>
+
+                <div>
+
+                    <h3>Defence Admit Card</h3>
+
+                    <p>
+                        Defence admit card information.
+                    </p>
+
+                    <span class="badge">Admit Card</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <!-- CUTOFF -->
+
+
+        <a class="card result-card"
+           data-category="cutoff"
+           href="cgl-cutoff.html">
+
+            <div class="card-left">
+
+                <div class="icon">📊</div>
+
+                <div>
+
+                    <h3>SSC CGL Cut Off</h3>
+
+                    <p>
+                        SSC CGL previous cutoff information.
+                    </p>
+
+                    <span class="badge">Cut Off</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card result-card"
+           data-category="cutoff"
+           href="chsl-cutoff.html">
+
+            <div class="card-left">
+
+                <div class="icon">📊</div>
+
+                <div>
+
+                    <h3>SSC CHSL Cut Off</h3>
+
+                    <p>
+                        CHSL cutoff information.
+                    </p>
+
+                    <span class="badge">Cut Off</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card result-card"
+           data-category="cutoff"
+           href="mts-cutoff.html">
+
+            <div class="card-left">
+
+                <div class="icon">📊</div>
+
+                <div>
+
+                    <h3>SSC MTS Cut Off</h3>
+
+                    <p>
+                        MTS cutoff information.
+                    </p>
+
+                    <span class="badge">Cut Off</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card result-card"
+           data-category="cutoff"
+           href="railway-cutoff.html">
+
+            <div class="card-left">
+
+                <div class="icon">📊</div>
+
+                <div>
+
+                    <h3>Railway Cut Off</h3>
+
+                    <p>
+                        Railway cutoff information.
+                    </p>
+
+                    <span class="badge">Cut Off</span>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card result-card"
+           data-category="cutoff"
+           href="police-cutoff.html">
+
+            <div class="card-left">
+
+                <div class="icon">📊</div>
+
+                <div>
+
+                    <h3>Police Cut Off</h3>
+
+                    <p>
+                        Police cutoff information.
+                    </p>
+
+                    <span class="badge">Cu
