@@ -1,270 +1,195 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Job Details | NaukriVexa</title>
-
-<meta name="description"
-content="NaukriVexa Government Job Details - Eligibility, Vacancy, Age Limit, Salary, Important Dates and Official Links.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Government Jobs | NaukriVexa</title>
+<meta name="description" content="Latest Government Jobs, SSC, Railway, Police, Defence and other recruitment updates on NaukriVexa.">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#172033;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#18202b;
+  line-height:1.5
 }
-
-a{
-    text-decoration:none;
-}
-
+a{text-decoration:none;color:inherit}
 .header{
-    background:linear-gradient(135deg,#0f172a,#1d4ed8);
-    color:white;
-    padding:16px;
+  background:linear-gradient(135deg,#111827,#243b55);
+  color:#fff;
+  padding:18px 16px 22px
 }
-
-.nav{
-    max-width:1050px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.top{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px
 }
-
 .logo{
-    color:white;
-    font-size:21px;
-    font-weight:800;
-    display:flex;
-    align-items:center;
-    gap:9px;
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:.3px
 }
-
-.logo-box{
-    width:40px;
-    height:40px;
-    border-radius:12px;
-    background:white;
-    color:#1d4ed8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:900;
-}
-
+.logo span{color:#60a5fa}
 .home{
-    color:white;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.25);
-    padding:8px 13px;
-    border-radius:10px;
-    font-size:13px;
+  border:1px solid #ffffff55;
+  padding:8px 13px;
+  border-radius:10px;
+  font-size:14px
 }
-
 .hero{
-    max-width:1050px;
-    margin:35px auto 10px;
+  max-width:1100px;
+  margin:20px auto 0
+}
+.hero h1{font-size:28px;margin-bottom:5px}
+.hero p{color:#cbd5e1;font-size:14px}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:22px 15px 45px
+}
+.search{
+  background:#fff;
+  padding:13px;
+  border-radius:15px;
+  box-shadow:0 5px 22px #0000000b;
+  margin-bottom:20px
+}
+.search input{
+  width:100%;
+  border:1px solid #dbe1ea;
+  padding:13px 14px;
+  border-radius:11px;
+  font-size:15px;
+  outline:none
+}
+.search input:focus{border-color:#2563eb}
+
+.filters{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding-bottom:4px;
+  margin-bottom:20px
+}
+.filters button{
+  white-space:nowrap;
+  border:1px solid #d8dee8;
+  background:#fff;
+  padding:9px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:13px
+}
+.filters button.active{
+  background:#2563eb;
+  color:#fff;
+  border-color:#2563eb
 }
 
-.breadcrumb{
-    color:#bfdbfe;
-    font-size:12px;
-    margin-bottom:12px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px
 }
-
-.hero h1{
-    font-size:30px;
-    line-height:1.3;
-}
-
-.hero p{
-    margin-top:8px;
-    color:#dbeafe;
-    font-size:14px;
-}
-
-.container{
-    max-width:1050px;
-    margin:20px auto 50px;
-    padding:0 15px;
-}
-
-.notice{
-    background:#fff7ed;
-    border:1px solid #fed7aa;
-    border-radius:15px;
-    padding:14px;
-    margin-bottom:16px;
-    font-size:13px;
-    color:#7c2d12;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:11px;
-    margin-bottom:16px;
-}
-
-.stat{
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:16px;
-    padding:16px;
-}
-
-.stat-icon{
-    font-size:21px;
-}
-
-.stat small{
-    display:block;
-    color:#64748b;
-    margin-top:5px;
-    font-size:11px;
-}
-
-.stat strong{
-    display:block;
-    margin-top:2px;
-    font-size:15px;
-}
-
 .card{
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:18px;
-    padding:20px;
-    margin-bottom:15px;
+  background:#fff;
+  border:1px solid #e5e9f0;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 5px 18px #00000009;
+  transition:.2s
 }
-
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px #00000012
+}
+.badge{
+  display:inline-block;
+  background:#eff6ff;
+  color:#2563eb;
+  font-size:11px;
+  font-weight:700;
+  padding:5px 9px;
+  border-radius:20px;
+  margin-bottom:10px
+}
 .card h2{
-    font-size:19px;
-    margin-bottom:15px;
+  font-size:19px;
+  margin-bottom:6px
 }
-
-.table{
-    width:100%;
-    border-collapse:collapse;
+.org{
+  color:#667085;
+  font-size:13px;
+  margin-bottom:13px
 }
-
-.table tr{
-    border-bottom:1px solid #edf0f4;
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:13px 0
 }
-
-.table tr:last-child{
-    border-bottom:0;
+.info div{
+  background:#f8fafc;
+  border-radius:9px;
+  padding:9px;
+  font-size:12px
 }
-
-.table td{
-    padding:11px 4px;
-    font-size:13px;
-    vertical-align:top;
+.info b{
+  display:block;
+  font-size:10px;
+  color:#7b8494;
+  margin-bottom:2px;
+  text-transform:uppercase
 }
-
-.table td:first-child{
-    width:38%;
-    color:#64748b;
-    font-weight:600;
-}
-
-.table td:last-child{
-    font-weight:700;
-}
-
-.list{
-    padding-left:20px;
-}
-
-.list li{
-    margin:7px 0;
-    font-size:14px;
-}
-
-.buttons{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
 .btn{
-    padding:12px 18px;
-    border-radius:11px;
-    font-size:13px;
-    font-weight:800;
-    display:inline-block;
+  display:block;
+  text-align:center;
+  background:#111827;
+  color:#fff;
+  padding:11px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700
 }
-
-.apply{
-    background:#2563eb;
-    color:white;
+.empty{
+  display:none;
+  text-align:center;
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  color:#667085
 }
-
-.notification{
-    background:#eff6ff;
-    color:#1d4ed8;
-    border:1px solid #bfdbfe;
+.section-title{
+  font-size:21px;
+  margin:0 0 14px
 }
-
-.disabled{
-    background:#e2e8f0;
-    color:#64748b;
+.note{
+  margin-top:22px;
+  background:#fff;
+  border-left:4px solid #2563eb;
+  padding:14px;
+  border-radius:10px;
+  font-size:13px;
+  color:#596273
 }
-
-.related{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.related a{
-    background:#f8fafc;
-    border:1px solid #e2e8f0;
-    padding:15px;
-    border-radius:14px;
-    color:#172033;
-    font-size:13px;
-    font-weight:700;
-}
-
 .footer{
-    background:#0f172a;
-    color:#cbd5e1;
-    text-align:center;
-    padding:28px 15px;
-    font-size:12px;
+  background:#111827;
+  color:#cbd5e1;
+  text-align:center;
+  padding:25px 15px;
+  font-size:12px
 }
+.footer strong{color:#fff}
 
-@media(max-width:700px){
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .hero h1{
-        font-size:25px;
-    }
-
-    .related{
-        grid-template-columns:1fr;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .btn{
-        text-align:center;
-    }
+@media(max-width:650px){
+  .grid{grid-template-columns:1fr}
+  .hero h1{font-size:24px}
+  .card h2{font-size:18px}
 }
 </style>
 </head>
@@ -272,389 +197,26 @@ a{
 <body>
 
 <header class="header">
+  <div class="top">
+    <div class="logo">Naukri<span>Vexa</span></div>
+    <a class="home" href="index.html">⌂ Home</a>
+  </div>
 
-    <div class="nav">
-
-        <a href="index.html" class="logo">
-            <div class="logo-box">NV</div>
-            <span>NaukriVexa</span>
-        </a>
-
-        <a href="jobs.html" class="home">
-            ← All Jobs
-        </a>
-
-    </div>
-
-    <div class="hero">
-
-        <div class="breadcrumb">
-            Home › Jobs › Job Details
-        </div>
-
-        <h1>
-            Government Job Details
-        </h1>
-
-        <p>
-            Vacancy, eligibility, age limit, salary, fee,
-            selection process और official links।
-        </p>
-
-    </div>
-
+  <div class="hero">
+    <h1>Government Jobs</h1>
+    <p>Find recruitment updates, eligibility, dates, salary and official links.</p>
+  </div>
 </header>
 
-
-<main class="container">
-
-    <div class="notice">
-
-        ⚠️ आवेदन करने से पहले संबंधित department की
-        <strong>official notification</strong> जरूर पढ़ें।
-        Final eligibility और dates official notification के अनुसार होंगी।
-
-    </div>
-
-
-    <div class="stats">
-
-        <div class="stat">
-            <span class="stat-icon">🏢</span>
-            <small>Department</small>
-            <strong>Government</strong>
-        </div>
-
-        <div class="stat">
-            <span class="stat-icon">👥</span>
-            <small>Total Vacancy</small>
-            <strong>See Notification</strong>
-        </div>
-
-        <div class="stat">
-            <span class="stat-icon">🎓</span>
-            <small>Qualification</small>
-            <strong>Post Wise</strong>
-        </div>
-
-        <div class="stat">
-            <span class="stat-icon">📍</span>
-            <small>Location</small>
-            <strong>All India</strong>
-        </div>
-
-    </div>
-
-
-    <section class="card">
-
-        <h2>📋 Job Overview</h2>
-
-        <table class="table">
-
-            <tr>
-                <td>Organization</td>
-                <td>Government Department</td>
-            </tr>
-
-            <tr>
-                <td>Post Name</td>
-                <td>Recruitment Post</td>
-            </tr>
-
-            <tr>
-                <td>Total Posts</td>
-                <td>Official Notification देखें</td>
-            </tr>
-
-            <tr>
-                <td>Job Location</td>
-                <td>All India / As Notified</td>
-            </tr>
-
-            <tr>
-                <td>Employment Type</td>
-                <td>Government Job</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>📅 Important Dates</h2>
-
-        <table class="table">
-
-            <tr>
-                <td>Application Start</td>
-                <td>As per Notification</td>
-            </tr>
-
-            <tr>
-                <td>Last Date</td>
-                <td>As per Notification</td>
-            </tr>
-
-            <tr>
-                <td>Correction Date</td>
-                <td>If Applicable</td>
-            </tr>
-
-            <tr>
-                <td>Exam Date</td>
-                <td>To Be Announced</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>🎓 Eligibility</h2>
-
-        <table class="table">
-
-            <tr>
-                <td>Educational Qualification</td>
-                <td>Post के अनुसार</td>
-            </tr>
-
-            <tr>
-                <td>Minimum Qualification</td>
-                <td>8th / 10th / 12th / Graduate / Other</td>
-            </tr>
-
-            <tr>
-                <td>Age Limit</td>
-                <td>Official Notification के अनुसार</td>
-            </tr>
-
-            <tr>
-                <td>Age Relaxation</td>
-                <td>Government Rules के अनुसार</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>💰 Salary</h2>
-
-        <table class="table">
-
-            <tr>
-                <td>Pay Level</td>
-                <td>Post Wise</td>
-            </tr>
-
-            <tr>
-                <td>Basic Pay</td>
-                <td>As Notified</td>
-            </tr>
-
-            <tr>
-                <td>Allowances</td>
-                <td>As per Government Rules</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>💳 Application Fee</h2>
-
-        <table class="table">
-
-            <tr>
-                <td>General / OBC</td>
-                <td>As per Notification</td>
-            </tr>
-
-            <tr>
-                <td>SC / ST</td>
-                <td>As per Notification</td>
-            </tr>
-
-            <tr>
-                <td>Female</td>
-                <td>As per Notification</td>
-            </tr>
-
-            <tr>
-                <td>Payment Mode</td>
-                <td>Online / As Notified</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>📝 Selection Process</h2>
-
-        <ul class="list">
-
-            <li>Written / Computer Based Examination</li>
-            <li>Skill / Typing Test, अगर लागू हो</li>
-            <li>Physical Test, अगर लागू हो</li>
-            <li>Document Verification</li>
-            <li>Medical Examination, अगर लागू हो</li>
-            <li>Final Merit / Selection</li>
-
-        </ul>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>📏 Physical Details</h2>
-
-        <table class="table">
-
-            <tr>
-                <td>Height</td>
-                <td>Post / Category / Region Wise</td>
-            </tr>
-
-            <tr>
-                <td>Chest</td>
-                <td>If Applicable</td>
-            </tr>
-
-            <tr>
-                <td>Running / PET</td>
-                <td>If Applicable</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>📄 Documents Required</h2>
-
-        <ul class="list">
-
-            <li>Educational qualification documents</li>
-            <li>Identity proof</li>
-            <li>Photograph</li>
-            <li>Signature</li>
-            <li>Category certificate, अगर लागू हो</li>
-            <li>Other documents mentioned in notification</li>
-
-        </ul>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>🚀 How To Apply</h2>
-
-        <ol class="list">
-
-            <li>Official notification पढ़ें।</li>
-            <li>Eligibility check करें।</li>
-            <li>Official recruitment website खोलें।</li>
-            <li>Registration करें।</li>
-            <li>Application form भरें।</li>
-            <li>Documents upload करें।</li>
-            <li>Fee pay करें, अगर लागू हो।</li>
-            <li>Final application की copy save करें।</li>
-
-        </ol>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>🔗 Official Links</h2>
-
-        <div class="buttons">
-
-            <a href="#"
-               class="btn disabled"
-               onclick="notReady(event)">
-               📝 Apply Online
-            </a>
-
-            <a href="#"
-               class="btn disabled"
-               onclick="notReady(event)">
-               📄 Notification
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <section class="card">
-
-        <h2>🔎 Explore More</h2>
-
-        <div class="related">
-
-            <a href="jobs.html">
-                📋 All Jobs
-            </a>
-
-            <a href="results.html">
-                🎯 Results
-            </a>
-
-            <a href="admit-card.html">
-                🎫 Admit Cards
-            </a>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer class="footer">
-
-    <strong>NaukriVexa</strong><br><br>
-
-    Free Government Jobs & Career Information Portal<br><br>
-
-    © 2026 NaukriVexa
-
-</footer>
-
-
-<script>
-
-function notReady(event){
-
-    event.preventDefault();
-
-    alert(
-        "इस vacancy का verified official link उपलब्ध होने के बाद यहाँ जोड़ा जाएगा।"
-    );
-
-}
-
-</script>
-
-</body>
-</html>
+<main class="wrap">
+
+  <div class="search">
+    <input id="searchBox" type="search"
+      placeholder="Search SSC, Railway, Police, Defence...">
+  </div>
+
+  <div class="filters">
+    <button class="active" data-filter="all">All Jobs</button>
+    <button data-filter="ssc">SSC</button>
+    <button data-filter="railway">Railway</button>
+    <
