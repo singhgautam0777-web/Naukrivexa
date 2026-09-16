@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Jobs - NaukriVexa</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.container{
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+    margin-bottom:15px;
+}
+.job{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.job h2{
+    margin-top:0;
+}
+.badge{
+    display:inline-block;
+    background:#eef2ff;
+    padding:6px 10px;
+    border-radius:20px;
+    margin:3px;
+    font-size:13px;
+}
+button{
+    padding:10px 15px;
+    border:0;
+    border-radius:7px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏛️ Government Jobs</h1>
+    <p>NaukriVexa पर Latest Government Jobs</p>
+</header>
+
+<div class="container">
+
+<input class="search" type="text" id="search"
+placeholder="🔎 Job search करें..." onkeyup="searchJobs()">
+
+<div id="jobs">
+
+<div class="job">
+<h2>SSC CGL</h2>
+<span class="badge">Graduate</span>
+<span class="badge">SSC</span>
+<span class="badge">Central Government</span>
+<p>SSC CGL के माध्यम से विभिन्न Central Government posts के लिए भर्ती।</p>
+<button onclick="alert('Official notification आने पर यहाँ पूरी details जोड़ी जाएंगी।')">View Details</button>
+</div>
+
+<div class="job">
+<h2>SSC CHSL</h2>
+<span class="badge">12th Pass</span>
+<span class="badge">SSC</span>
+<span class="badge">Central Government</span>
+<p>12th pass candidates के लिए विभिन्न posts की भर्ती।</p>
+<button onclick="alert('Official notification आने पर यहाँ पूरी details जोड़ी जाएंगी।')">View Details</button>
+</div>
+
+<div class="job">
+<h2>SSC MTS</h2>
+<span class="badge">10th Pass</span>
+<span class="badge">SSC</span>
+<span class="badge">Central Government</span>
+<p>10th pass candidates के लिए Multi Tasking Staff recruitment।</p>
+<button onclick="alert('Official notification आने पर यहाँ पूरी details जोड़ी जाएंगी।')">View Details</button>
+</div>
+
+<div class="job">
+<h2>Railway Recruitment</h2>
+<span class="badge">10th / 12th / Graduate</span>
+<span class="badge">Railway</span>
+<span class="badge">Central Government</span>
+<p>Indian Railways की अलग-अलग भर्ती और vacancies की जानकारी।</p>
+<button onclick="alert('Official notification आने पर यहाँ पूरी details जोड़ी जाएंगी।')">View Details</button>
+</div>
+
+<div class="job">
+<h2>Police Recruitment</h2>
+<span class="badge">10th / 12th</span>
+<span class="badge">Police</span>
+<span class="badge">State Government</span>
+<p>Police और Constable भर्ती की जानकारी।</p>
+<button onclick="alert('Official notification आने पर यहाँ पूरी details जोड़ी जाएंगी।')">View Details</button>
+</div>
+
+<div class="job">
+<h2>Defence Recruitment</h2>
+<span class="badge">10th / 12th</span>
+<span class="badge">Defence</span>
+<span class="badge">Government</span>
+<p>Army, Air Force, Navy और अन्य Defence recruitment की जानकारी।</p>
+<button onclick="alert('Official notification आने पर यहाँ पूरी details जोड़ी जाएंगी।')">View Details</button>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+
+<script>
+function searchJobs(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let jobs = document.querySelectorAll(".job");
+
+    jobs.forEach(function(job){
+        let text = job.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            job.style.display = "block";
+        }else{
+            job.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
