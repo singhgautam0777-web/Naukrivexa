@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search - NaukriVexa</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#222;
+}
+
+header{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:20px 15px;
+}
+
+header h1{
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:18px;
+}
+
+.search-box{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.search-box input{
+  flex:1;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.search-box button{
+  padding:14px 16px;
+  border:0;
+  border-radius:10px;
+  background:#111827;
+  color:white;
+  font-size:16px;
+}
+
+.card{
+  background:white;
+  padding:17px;
+  margin-bottom:12px;
+  border-radius:13px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.card h2{
+  font-size:18px;
+  margin-bottom:7px;
+}
+
+.card p{
+  color:#555;
+  line-height:1.5;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:8px;
+  padding:5px 9px;
+  border-radius:15px;
+  background:#eef2ff;
+  font-size:12px;
+}
+
+.card a{
+  display:inline-block;
+  margin-top:12px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#111827;
+}
+
+.no-result{
+  text-align:center;
+  padding:25px;
+  color:#666;
+  display:none;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin:25px 0;
+  text-decoration:none;
+  color:#111827;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🔎 NaukriVexa Search</h1>
+  <p>Jobs, Results, Admit Card और Exams खोजें</p>
+</header>
+
+<div class="container">
+
+<div class="search-box">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="जैसे SSC CGL, CHSL, Railway..."
+    oninput="searchData()"
+  >
+
+  <button onclick="searchData()">🔎</button>
+</div>
+
+<div id="results">
+
+  <div class="card">
+    <h2>SSC CGL</h2>
+    <p>SSC CGL Government Job की eligibility, syllabus, result और cut off की जानकारी।</p>
+    <span class="tag">Government Job</span>
+    <br>
+    <a href="jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>SSC CHSL</h2>
+    <p>12th pass candidates के लिए SSC CHSL recruitment की जानकारी।</p>
+    <span class="tag">12th Pass</span>
+    <br>
+    <a href="12th-jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>SSC MTS</h2>
+    <p>10th pass candidates के लिए SSC MTS job information।</p>
+    <span class="tag">10th Pass</span>
+    <br>
+    <a href="10th-jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Railway Jobs</h2>
+    <p>Railway recruitment और अलग-अलग qualification के jobs की जानकारी।</p>
+    <span class="tag">Railway</span>
+    <br>
+    <a href="jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Police Jobs</h2>
+    <p>Police और Constable recruitment की जानकारी।</p>
+    <span class="tag">Police</span>
+    <br>
+    <a href="jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Defence Jobs</h2>
+    <p>Army, Air Force, Navy और अन्य Defence recruitment की जानकारी।</p>
+    <span class="tag">Defence</span>
+    <br>
+    <a href="jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Graduate Jobs</h2>
+    <p>Graduation के बाद उपलब्ध Government Jobs की जानकारी।</p>
+    <span class="tag">Graduate</span>
+    <br>
+    <a href="graduate-jobs.html">Details देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Admit Card</h2>
+    <p>SSC, Railway, Police और Defence exams के admit card की जानकारी।</p>
+    <span class="tag">Admit Card</span>
+    <br>
+    <a href="admit-card.html">देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Results</h2>
+    <p>Government exams के results की जानकारी।</p>
+    <span class="tag">Result</span>
+    <br>
+    <a href="results.html">देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Syllabus</h2>
+    <p>SSC, Railway, Police और Defence exams के syllabus की जानकारी।</p>
+    <span class="tag">Syllabus</span>
+    <br>
+    <a href="syllabus.html">देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Cut Off</h2>
+    <p>SSC, Railway, Police और अन्य exams की cut off information।</p>
+    <span class="tag">Cut Off</span>
+    <br>
+    <a href="cutoff.html">देखें →</a>
+  </div>
+
+  <div class="card">
+    <h2>Physical Eligibility</h2>
+    <p>Height और basic physical eligibility checker।</p>
+    <span class="tag">Physical</span>
+    <br>
+    <a href="physical.html">Check करें →</a>
+  </div>
+
+</div>
+
+<div id="noResult" class="no-result">
+  ❌ कोई result नहीं मिला।
+</div>
+
+<a href="index.html" class="back">
+  ⬅️ वापस Homepage
+</a>
+
+</div>
+
+<script>
+
+function searchData(){
+
+  const input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const cards =
+    document.querySelectorAll("#results .card");
+
+  let found = 0;
+
+  cards.forEach(function(card){
+
+    const text =
+      card.innerText.toLowerCase();
+
+    if(text.includes(input)){
+
+      card.style.display = "block";
+      found++;
+
+    }else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+  if(found === 0){
+
+    document.getElementById("noResult").style.display = "block";
+
+  }else{
+
+    document.getElementById("noResult").style.display = "none";
+
+  }
+}
+
+</script>
+
+</body>
+</html>
