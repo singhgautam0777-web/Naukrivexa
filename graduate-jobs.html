@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graduate Jobs - NaukriVexa</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:22px 15px;
+}
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+    margin-bottom:15px;
+}
+.job{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.job h2{
+    margin-top:0;
+}
+.badge{
+    display:inline-block;
+    background:#eef2ff;
+    padding:6px 10px;
+    border-radius:20px;
+    margin:3px;
+    font-size:13px;
+}
+button{
+    width:100%;
+    padding:11px;
+    border:0;
+    border-radius:8px;
+    background:#111827;
+    color:white;
+    font-size:15px;
+}
+.back{
+    display:block;
+    text-align:center;
+    margin:25px 0;
+    text-decoration:none;
+}
+.note{
+    background:#fff7ed;
+    padding:12px;
+    border-radius:8px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎓 Graduate Jobs</h1>
+<p>Graduation के बाद सरकारी नौकरी की जानकारी</p>
+</header>
+
+<div class="container">
+
+<input class="search"
+type="text"
+id="search"
+placeholder="🔎 Job search करें..."
+onkeyup="searchJobs()">
+
+<div id="jobs">
+
+<div class="job">
+<h2>SSC CGL</h2>
+<span class="badge">Graduate</span>
+<span class="badge">SSC</span>
+<p>SSC CGL में विभिन्न Central Government departments और posts के लिए भर्ती होती है।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+<div class="job">
+<h2>SSC CPO</h2>
+<span class="badge">Graduate</span>
+<span class="badge">SSC</span>
+<p>Sub-Inspector recruitment में qualification के साथ physical और अन्य requirements लागू हो सकती हैं।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+<div class="job">
+<h2>UPSC Exams</h2>
+<span class="badge">Graduate</span>
+<span class="badge">UPSC</span>
+<p>UPSC की विभिन्न परीक्षाओं में graduation qualification वाली recruitments होती हैं।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+<div class="job">
+<h2>Railway Graduate Jobs</h2>
+<span class="badge">Graduate</span>
+<span class="badge">Railway</span>
+<p>Railway में graduation-level की विभिन्न posts के लिए भर्ती होती है।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+<div class="job">
+<h2>Banking Jobs</h2>
+<span class="badge">Graduate</span>
+<span class="badge">Banking</span>
+<p>IBPS, SBI और अन्य banking recruitments में graduation qualification वाली posts हो सकती हैं।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+<div class="job">
+<h2>State Government Jobs</h2>
+<span class="badge">Graduate</span>
+<span class="badge">State Govt</span>
+<p>अलग-अलग राज्यों में graduation-level सरकारी recruitments आती रहती हैं।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+<div class="job">
+<h2>Teaching Jobs</h2>
+<span class="badge">Graduate</span>
+<span class="badge">Teaching</span>
+<p>Teaching posts में graduation के साथ संबंधित qualification या eligibility test की आवश्यकता हो सकती है।</p>
+<button onclick="showInfo()">View Details</button>
+</div>
+
+</div>
+
+<div class="note">
+⚠️ महत्वपूर्ण: किसी भी भर्ती की final eligibility हमेशा संबंधित official notification से verify करें।
+</div>
+
+<a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
+
+</div>
+
+<script>
+function searchJobs(){
+
+let input=document.getElementById("search").value.toLowerCase();
+let jobs=document.querySelectorAll(".job");
+
+jobs.forEach(function(job){
+
+let text=job.innerText.toLowerCase();
+
+if(text.includes(input)){
+job.style.display="block";
+}else{
+job.style.display="none";
+}
+
+});
+}
+
+function showInfo(){
+alert("इस भर्ती की official notification जारी होने पर यहाँ पूरी details और official link जोड़ा जाएगा।");
+}
+</script>
+
+</body>
+</html>
