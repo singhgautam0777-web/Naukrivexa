@@ -3,42 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Useful Tools - NaukriVexa</title>
+<title>Useful Career Tools - NaukriVexa</title>
 
 <style>
+*{box-sizing:border-box}
 body{
-    font-family:Arial,sans-serif;
     margin:0;
+    font-family:Arial,sans-serif;
     background:#f5f7fb;
     color:#222;
 }
 header{
     background:#111827;
     color:white;
-    padding:20px;
     text-align:center;
+    padding:22px 15px;
 }
 .container{
     max-width:700px;
-    margin:20px auto;
+    margin:auto;
     padding:15px;
 }
 .tool{
-    display:block;
     background:white;
     padding:18px;
-    margin-bottom:14px;
+    margin-bottom:15px;
     border-radius:12px;
-    text-decoration:none;
-    color:#222;
     box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
-.tool h2{
-    margin:0 0 7px;
+.tool h2{margin-top:0}
+input,select{
+    width:100%;
+    padding:12px;
+    margin:6px 0 10px;
+    border:1px solid #ccc;
+    border-radius:8px;
 }
-.tool p{
-    margin:0;
-    color:#666;
+button{
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:8px;
+    background:#111827;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+.result{
+    margin-top:12px;
+    padding:12px;
+    background:#eef2ff;
+    border-radius:8px;
+    font-weight:bold;
 }
 .back{
     display:block;
@@ -52,55 +68,267 @@ header{
 <body>
 
 <header>
-<h1>🛠️ Useful Tools</h1>
-<p>NaukriVexa के useful calculators और tools</p>
+<h1>🛠️ Useful Career Tools</h1>
+<p>NaukriVexa के Free Tools</p>
 </header>
 
 <div class="container">
 
-<a class="tool" href="#">
-<h2>💰 Salary Calculator</h2>
-<p>Salary और monthly income का calculation करें।</p>
-</a>
+<!-- Percentage -->
+<div class="tool">
+<h2>🧮 Percentage Calculator</h2>
 
-<a class="tool" href="#">
-<h2>📊 Percentage Calculator</h2>
-<p>Marks का percentage आसानी से निकालें।</p>
-</a>
+<input type="number" id="obtained" placeholder="प्राप्त अंक">
+<input type="number" id="total" placeholder="कुल अंक">
 
-<a class="tool" href="#">
+<button onclick="percentage()">Calculate Percentage</button>
+
+<div id="percentResult" class="result"></div>
+</div>
+
+
+<!-- Age -->
+<div class="tool">
 <h2>🎂 Age Calculator</h2>
-<p>Date of Birth से exact age calculate करें।</p>
-</a>
 
-<a class="tool" href="#">
-<h2>📏 Height Converter</h2>
-<p>Feet, inch और centimetre में height convert करें।</p>
-</a>
+<input type="date" id="dob">
 
-<a class="tool" href="#">
+<button onclick="ageCalc()">Calculate Age</button>
+
+<div id="ageResult" class="result"></div>
+</div>
+
+
+<!-- Height -->
+<div class="tool">
+<h2>📐 Height Converter</h2>
+
+<input type="number" id="feet" placeholder="Feet">
+<input type="number" id="inch" placeholder="Inch">
+
+<button onclick="heightCalc()">Convert to CM</button>
+
+<div id="heightResult" class="result"></div>
+</div>
+
+
+<!-- BMI -->
+<div class="tool">
 <h2>⚖️ BMI Calculator</h2>
-<p>Height और weight के आधार पर BMI calculate करें।</p>
-</a>
 
-<a class="tool" href="#">
-<h2>🎓 Scholarship Finder</h2>
-<p>Students के लिए scholarships की जानकारी देखें।</p>
-</a>
+<input type="number" id="weight" placeholder="Weight (kg)">
+<input type="number" id="height" placeholder="Height (cm)">
 
-<a class="tool" href="#">
+<button onclick="bmiCalc()">Calculate BMI</button>
+
+<div id="bmiResult" class="result"></div>
+</div>
+
+
+<!-- Salary -->
+<div class="tool">
+<h2>💰 Salary Calculator</h2>
+
+<input type="number" id="salary" placeholder="Monthly Gross Salary">
+
+<button onclick="salaryCalc()">Calculate</button>
+
+<div id="salaryResult" class="result"></div>
+</div>
+
+
+<!-- Typing -->
+<div class="tool">
 <h2>⌨️ Typing Test</h2>
-<p>अपनी typing speed और accuracy check करें।</p>
-</a>
 
-<a class="tool" href="#">
+<p id="typingText">
+India is a diverse country with many languages, cultures and traditions.
+</p>
+
+<textarea id="typingInput"
+style="width:100%;height:100px;padding:10px;border:1px solid #ccc;border-radius:8px"
+placeholder="ऊपर का text यहाँ type करें"></textarea>
+
+<button onclick="typingCalc()">Check Typing</button>
+
+<div id="typingResult" class="result"></div>
+</div>
+
+
+<!-- Scholarship -->
+<div class="tool">
+<h2>🎓 Scholarship Finder</h2>
+
+<p>Scholarship की जानकारी के लिए अपनी qualification चुनें:</p>
+
+<select id="qualification">
+<option value="">Qualification चुनें</option>
+<option>8th Pass</option>
+<option>10th Pass</option>
+<option>12th Pass</option>
+<option>Graduate</option>
+</select>
+
+<button onclick="scholarship()">Search</button>
+
+<div id="scholarshipResult" class="result"></div>
+</div>
+
+
+<!-- Mock Tests -->
+<div class="tool">
 <h2>📝 Mock Tests</h2>
-<p>Competitive exams की practice करें।</p>
-</a>
+
+<p>Mock Test section जल्द ही यहाँ जोड़ा जाएगा।</p>
+
+<button onclick="alert('Mock Tests जल्द ही उपलब्ध होंगे।')">
+Start Mock Test
+</button>
+</div>
 
 <a class="back" href="index.html">← Homepage पर वापस जाएँ</a>
 
 </div>
+
+
+<script>
+
+function percentage(){
+
+let obtained=Number(document.getElementById("obtained").value);
+let total=Number(document.getElementById("total").value);
+
+if(total<=0){
+document.getElementById("percentResult").innerText="कृपया सही कुल अंक डालें।";
+return;
+}
+
+let result=(obtained/total)*100;
+
+document.getElementById("percentResult").innerText=
+"Percentage: "+result.toFixed(2)+"%";
+}
+
+
+function ageCalc(){
+
+let dob=new Date(document.getElementById("dob").value);
+
+if(!document.getElementById("dob").value){
+document.getElementById("ageResult").innerText="पहले Date of Birth चुनें।";
+return;
+}
+
+let today=new Date();
+
+let age=today.getFullYear()-dob.getFullYear();
+
+let month=today.getMonth()-dob.getMonth();
+
+if(month<0 || (month===0 && today.getDate()<dob.getDate())){
+age--;
+}
+
+document.getElementById("ageResult").innerText=
+"आपकी उम्र: "+age+" वर्ष";
+}
+
+
+function heightCalc(){
+
+let feet=Number(document.getElementById("feet").value);
+let inch=Number(document.getElementById("inch").value);
+
+let cm=(feet*30.48)+(inch*2.54);
+
+document.getElementById("heightResult").innerText=
+"Height: "+cm.toFixed(2)+" cm";
+}
+
+
+function bmiCalc(){
+
+let weight=Number(document.getElementById("weight").value);
+let height=Number(document.getElementById("height").value)/100;
+
+if(weight<=0 || height<=0){
+document.getElementById("bmiResult").innerText=
+"कृपया सही height और weight डालें।";
+return;
+}
+
+let bmi=weight/(height*height);
+
+document.getElementById("bmiResult").innerText=
+"BMI: "+bmi.toFixed(2);
+}
+
+
+function salaryCalc(){
+
+let salary=Number(document.getElementById("salary").value);
+
+if(salary<=0){
+document.getElementById("salaryResult").innerText=
+"कृपया salary डालें।";
+return;
+}
+
+let annual=salary*12;
+
+document.getElementById("salaryResult").innerText=
+"Estimated Annual Salary: ₹"+annual.toLocaleString("en-IN");
+}
+
+
+function typingCalc(){
+
+let original=document.getElementById("typingText").innerText.trim();
+let typed=document.getElementById("typingInput").value.trim();
+
+if(!typed){
+document.getElementById("typingResult").innerText=
+"पहले typing करें।";
+return;
+}
+
+let words=typed.split(/\s+/).length;
+
+let startTime=window.typingStart;
+
+if(!startTime){
+window.typingStart=Date.now();
+
+document.getElementById("typingResult").innerText=
+"Timer शुरू हो गया। कुछ और type करके फिर Check दबाएँ।";
+
+return;
+}
+
+let minutes=(Date.now()-startTime)/60000;
+
+let wpm=Math.round(words/minutes);
+
+document.getElementById("typingResult").innerText=
+"Typing Speed: "+wpm+" WPM";
+}
+
+
+function scholarship(){
+
+let q=document.getElementById("qualification").value;
+
+if(!q){
+document.getElementById("scholarshipResult").innerText=
+"Qualification चुनें।";
+return;
+}
+
+document.getElementById("scholarshipResult").innerText=
+q+" students के लिए scholarship options जल्द जोड़े जाएंगे।";
+}
+
+</script>
 
 </body>
 </html>
