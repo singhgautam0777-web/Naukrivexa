@@ -1,132 +1,295 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Job Details | NaukriVexa</title>
-<meta name="description" content="Government job vacancy details, eligibility, dates, salary and official links.">
-
+<title>Latest Government Jobs | NaukriVexa</title>
+<meta name="description" content="Find government jobs across India with qualification, department, age, salary, dates and official links.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
 a{text-decoration:none;color:inherit}
-.header{background:linear-gradient(135deg,#0b1020,#2636a8);color:#fff}
-.top{text-align:center;background:#080c18;padding:8px;font-size:11px;color:#cbd5e1}
-.nav{max-width:1050px;margin:auto;padding:14px 15px;display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:9px;font-size:20px;font-weight:800}
-.logo b{width:40px;height:40px;border-radius:12px;background:#fff;color:#3346c7;display:grid;place-items:center}
-.back{font-size:12px;padding:9px 12px;border:1px solid #ffffff30;border-radius:9px;color:#dbe4ff}
-.hero{max-width:900px;margin:auto;padding:35px 15px 55px}
-.tag{display:inline-block;background:#ffffff12;border:1px solid #ffffff25;padding:6px 10px;border-radius:20px;font-size:10px;color:#dbe4ff}
-.hero h1{font-size:clamp(28px,6vw,48px);margin:14px 0 8px}
-.hero p{color:#cbd5e1;font-size:13px;line-height:1.6}
-.container{max-width:950px;margin:auto;padding:22px 15px 60px}
-.notice{background:#fffbeb;border:1px solid #fde68a;border-radius:13px;padding:13px;font-size:11px;line-height:1.6;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}
-.stat{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px}
-.stat i{font-style:normal;font-size:19px}
-.stat strong{display:block;font-size:13px;margin-top:6px}
-.stat small{display:block;color:#64748b;font-size:9px;margin-top:3px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin-bottom:13px}
-.card h2{font-size:17px;margin-bottom:13px}
-table{width:100%;border-collapse:collapse}
-td{padding:10px 3px;border-bottom:1px solid #eef1f5;font-size:12px;vertical-align:top}
-tr:last-child td{border:0}
-td:first-child{width:38%;color:#64748b;font-weight:600}
-td:last-child{font-weight:700}
-ul,ol{padding-left:19px}
-li{font-size:12px;margin:7px 0;line-height:1.5}
-.buttons{display:flex;gap:8px;flex-wrap:wrap}
-.btn{padding:11px 15px;border-radius:10px;font-size:11px;font-weight:700}
-.apply{background:#3346c7;color:#fff}
-.noticebtn{background:#eef2ff;color:#3346c7}
-.related{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.related a{padding:13px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:11px;font-size:11px;font-weight:700}
-.footer{background:#080c18;color:#94a3b8;text-align:center;padding:28px 15px;font-size:10px}
-.footer strong{color:#fff;font-size:17px}
-@media(max-width:650px){
-.grid{grid-template-columns:repeat(2,1fr)}
-.related{grid-template-columns:1fr}
-.hero h1{font-size:31px}
-}
+.header{background:linear-gradient(135deg,#111827,#1e3a5f);color:white;padding:18px 15px 25px}
+.top,.hero,.wrap{max-width:1100px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:800}.logo span{color:#60a5fa}
+.home{border:1px solid #ffffff44;padding:8px 13px;border-radius:10px;font-size:13px}
+.hero{margin-top:20px}.hero h1{font-size:27px}.hero p{font-size:13px;color:#cbd5e1;margin-top:5px}
+.wrap{padding:20px 15px 45px}
+.search{background:white;padding:13px;border-radius:15px;box-shadow:0 5px 20px #0000000b}
+.search input{width:100%;padding:13px;border:1px solid #d9dee7;border-radius:10px;font-size:15px;outline:0}
+.search input:focus{border-color:#2563eb}
+.filters{background:white;margin-top:15px;padding:15px;border-radius:15px}
+.filter-title{font-size:14px;font-weight:bold;margin-bottom:10px}
+.row{display:flex;gap:8px;overflow:auto;margin-bottom:12px}
+select{min-width:145px;padding:10px;border:1px solid #d9dee7;border-radius:9px;background:white;font-size:13px}
+.chips{display:flex;gap:7px;overflow:auto}
+.chips button{white-space:nowrap;border:1px solid #d8dee8;background:#fff;padding:8px 12px;border-radius:20px;font-size:12px;cursor:pointer}
+.chips button.active{background:#2563eb;color:white;border-color:#2563eb}
+.heading{display:flex;justify-content:space-between;align-items:center;margin:22px 0 13px}
+.heading h2{font-size:21px}.count{font-size:12px;color:#667085}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.card{background:white;border:1px solid #e4e8ef;border-radius:16px;padding:17px;box-shadow:0 5px 18px #00000009}
+.badge{display:inline-block;background:#eff6ff;color:#2563eb;padding:5px 9px;border-radius:20px;font-size:10px;font-weight:bold;margin-bottom:9px}
+.card h3{font-size:18px;margin-bottom:4px}
+.org{font-size:12px;color:#667085;margin-bottom:12px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.info div{background:#f8fafc;padding:8px;border-radius:8px;font-size:11px}
+.info b{display:block;color:#7b8494;font-size:9px;text-transform:uppercase;margin-bottom:2px}
+.date{margin:12px 0;font-size:12px;color:#b42318;font-weight:bold}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn{display:block;text-align:center;padding:10px;border-radius:9px;background:#111827;color:white;font-size:12px;font-weight:bold}
+.btn.blue{background:#2563eb}
+.empty{display:none;background:white;text-align:center;padding:30px;border-radius:15px;color:#667085}
+.note{margin-top:20px;background:white;border-left:4px solid #2563eb;padding:13px;border-radius:9px;font-size:12px;color:#596273}
+.footer{background:#111827;color:#cbd5e1;text-align:center;padding:25px 15px;font-size:12px}
+.footer b{color:white}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}.heading h2{font-size:19px}}
 </style>
 </head>
-
 <body>
 
 <header class="header">
-
-<div class="top">🚀 NaukriVexa — Government Jobs & Career Portal</div>
-
-<nav class="nav">
-<a href="index.html" class="logo"><b>NV</b>NaukriVexa</a>
-<a href="jobs.html" class="back">← All Jobs</a>
-</nav>
-
-<div class="hero">
-<span class="tag">🇮🇳 ALL INDIA • GOVERNMENT JOB</span>
-<h1>Government Job Details</h1>
-<p>Vacancy, eligibility, important dates, salary, selection process और official links.</p>
+<div class="top">
+<div class="logo">Naukri<span>Vexa</span></div>
+<a class="home" href="index.html">⌂ Home</a>
 </div>
-
+<div class="hero">
+<h1>Latest Government Jobs</h1>
+<p>Search and explore government recruitment opportunities across India.</p>
+</div>
 </header>
 
-<main class="container">
+<main class="wrap">
 
-<div class="notice">
-⚠️ <strong>Important:</strong> आवेदन करने से पहले official notification जरूर पढ़ें। Final information संबंधित department की notification के अनुसार मान्य होगी।
+<div class="search">
+<input id="search" type="search" placeholder="Search job, department, post...">
 </div>
 
-<div class="grid">
+<div class="filters">
+<div class="filter-title">Filter Jobs</div>
 
-<div class="stat">
-<i>🏢</i>
-<strong>Department</strong>
-<small>Government</small>
+<div class="row">
+<select id="qualification">
+<option value="all">All Qualification</option>
+<option value="10th">10th Pass</option>
+<option value="12th">12th Pass</option>
+<option value="graduate">Graduate</option>
+<option value="iti">ITI</option>
+<option value="diploma">Diploma</option>
+</select>
+
+<select id="state">
+<option value="all">All India / State</option>
+<option value="all india">All India</option>
+<option value="uttar pradesh">Uttar Pradesh</option>
+<option value="bihar">Bihar</option>
+<option value="delhi">Delhi</option>
+<option value="rajasthan">Rajasthan</option>
+</select>
 </div>
 
-<div class="stat">
-<i>👥</i>
-<strong>Vacancy</strong>
-<small>Notification Wise</small>
+<div class="chips">
+<button class="active" data-cat="all">All</button>
+<button data-cat="ssc">SSC</button>
+<button data-cat="railway">Railway</button>
+<button data-cat="banking">Banking</button>
+<button data-cat="police">Police</button>
+<button data-cat="defence">Defence</button>
+<button data-cat="upsc">UPSC</button>
+<button data-cat="post office">Post Office</button>
+<button data-cat="teaching">Teaching</button>
+</div>
 </div>
 
-<div class="stat">
-<i>🎓</i>
-<strong>Qualification</strong>
-<small>Post Wise</small>
+<div class="heading">
+<h2>Government Jobs</h2>
+<span class="count" id="count">6 jobs</span>
 </div>
 
-<div class="stat">
-<i>📍</i>
-<strong>Location</strong>
-<small>All India</small>
+<div class="grid" id="jobs">
+
+<article class="card" data-cat="ssc" data-qual="graduate" data-state="all india"
+data-text="ssc cgl combined graduate level staff selection commission">
+<span class="badge">SSC • Graduate</span>
+<h3>SSC CGL</h3>
+<p class="org">Staff Selection Commission</p>
+<div class="info">
+<div><b>Qualification</b>Graduate</div>
+<div><b>Vacancy</b>As per notice</div>
+<div><b>Age</b>Post wise</div>
+<div><b>Location</b>All India</div>
+</div>
+<div class="date">📅 Check official notification</div>
+<div class="actions">
+<a class="btn" href="job.html">Details</a>
+<a class="btn blue" href="cgl.html">Open</a>
+</div>
+</article>
+
+<article class="card" data-cat="ssc" data-qual="12th" data-state="all india"
+data-text="ssc chsl ldc jsa deo staff selection commission">
+<span class="badge">SSC • 12th</span>
+<h3>SSC CHSL</h3>
+<p class="org">Staff Selection Commission</p>
+<div class="info">
+<div><b>Qualification</b>12th Pass</div>
+<div><b>Posts</b>LDC / JSA / DEO</div>
+<div><b>Age</b>Post wise</div>
+<div><b>Location</b>All India</div>
+</div>
+<div class="date">📅 Check official notification</div>
+<div class="actions">
+<a class="btn" href="chsl.html">Details</a>
+<a class="btn blue" href="chsl.html">Open</a>
+</div>
+</article>
+
+<article class="card" data-cat="ssc" data-qual="10th" data-state="all india"
+data-text="ssc mts multi tasking staff">
+<span class="badge">SSC • 10th</span>
+<h3>SSC MTS</h3>
+<p class="org">Staff Selection Commission</p>
+<div class="info">
+<div><b>Qualification</b>10th Pass</div>
+<div><b>Posts</b>MTS</div>
+<div><b>Age</b>Post wise</div>
+<div><b>Location</b>All India</div>
+</div>
+<div class="date">📅 Check official notification</div>
+<div class="actions">
+<a class="btn" href="mts.html">Details</a>
+<a class="btn blue" href="mts.html">Open</a>
+</div>
+</article>
+
+<article class="card" data-cat="railway" data-qual="10th" data-state="all india"
+data-text="railway rrb group d technician ntpc">
+<span class="badge">Railway</span>
+<h3>Railway Recruitment</h3>
+<p class="org">Railway Recruitment Boards</p>
+<div class="info">
+<div><b>Qualification</b>10th / 12th / Graduate</div>
+<div><b>Posts</b>Various</div>
+<div><b>Age</b>Post wise</div>
+<div><b>Location</b>All India</div>
+</div>
+<div class="date">📅 Check official notification</div>
+<div class="actions">
+<a class="btn" href="railway.html">Details</a>
+<a class="btn blue" href="railway.html">Open</a>
+</div>
+</article>
+
+<article class="card" data-cat="police" data-qual="12th" data-state="uttar pradesh"
+data-text="police constable sub inspector recruitment">
+<span class="badge">Police</span>
+<h3>Police Recruitment</h3>
+<p class="org">Police Recruitment</p>
+<div class="info">
+<div><b>Qualification</b>10th / 12th / Graduate</div>
+<div><b>Posts</b>Constable / SI</div>
+<div><b>Physical</b>Post wise</div>
+<div><b>Location</b>State wise</div>
+</div>
+<div class="date">📅 Check official notification</div>
+<div class="actions">
+<a class="btn" href="police.html">Details</a>
+<a class="btn blue" href="police.html">Open</a>
+</div>
+</article>
+
+<article class="card" data-cat="defence" data-qual="12th" data-state="all india"
+data-text="army navy air force coast guard defence">
+<span class="badge">Defence</span>
+<h3>Defence Recruitment</h3>
+<p class="org">Army / Navy / Air Force / ICG</p>
+<div class="info">
+<div><b>Qualification</b>10th / 12th / Graduate</div>
+<div><b>Posts</b>Various</div>
+<div><b>Physical</b>Required</div>
+<div><b>Location</b>All India</div>
+</div>
+<div class="date">📅 Check official notification</div>
+<div class="actions">
+<a class="btn" href="defence.html">Details</a>
+<a class="btn blue" href="defence.html">Open</a>
+</div>
+</article>
+
 </div>
 
+<div class="empty" id="empty">
+No matching jobs found.<br>Try another search or filter.
 </div>
 
-<section class="card">
-<h2>📋 Job Overview</h2>
-<table>
-<tr><td>Organization</td><td>Government Department</td></tr>
-<tr><td>Post Name</td><td>Recruitment Post</td></tr>
-<tr><td>Total Vacancy</td><td>As per Official Notification</td></tr>
-<tr><td>Job Location</td><td>All India / As Notified</td></tr>
-<tr><td>Employment Type</td><td>Government Job</td></tr>
-</table>
-</section>
+<div class="note">
+<b>Important:</b> Vacancy, dates, eligibility and application details can change.
+Always verify the latest information from the official recruitment notification
+before applying.
+</div>
 
-<section class="card">
-<h2>📅 Important Dates</h2>
-<table>
-<tr><td>Application Start</td><td>As per Notification</td></tr>
-<tr><td>Last Date</td><td>As per Notification</td></tr>
-<tr><td>Correction Date</td><td>If Applicable</td></tr>
-<tr><td>Exam Date</td><td>To Be Announced</td></tr>
-</table>
-</section>
+</main>
 
-<section class="card">
-<h2>🎓 Eligibility</h2>
-<table>
-<tr><td>Qualification
+<footer class="footer">
+<b>NaukriVexa</b><br>
+Government Jobs • Results • Admit Cards • Cut Off • Syllabus • Career Tools
+<br><br>© 2026 NaukriVexa
+</footer>
+
+<script>
+const search=document.getElementById("search");
+const qualification=document.getElementById("qualification");
+const state=document.getElementById("state");
+const cards=[...document.querySelectorAll(".card")];
+const empty=document.getElementById("empty");
+const count=document.getElementById("count");
+const buttons=[...document.querySelectorAll(".chips button")];
+
+let category="all";
+
+function filterJobs(){
+let q=search.value.toLowerCase().trim();
+let qual=qualification.value;
+let st=state.value;
+let total=0;
+
+cards.forEach(card=>{
+let text=(card.innerText+" "+card.dataset.text).toLowerCase();
+let cat=card.dataset.cat;
+let cardQual=card.dataset.qual;
+let cardState=card.dataset.state;
+
+let okSearch=!q||text.includes(q);
+let okCat=category==="all"||cat.includes(category);
+let okQual=qual==="all"||cardQual.includes(qual);
+let okState=st==="all"||cardState.includes(st);
+
+if(okSearch&&okCat&&okQual&&okState){
+card.style.display="";
+total++;
+}else{
+card.style.display="none";
+}
+});
+
+count.textContent=total+" job"+(total===1?"":"s");
+empty.style.display=total?"none":"block";
+}
+
+search.addEventListener("input",filterJobs);
+qualification.addEventListener("change",filterJobs);
+state.addEventListener("change",filterJobs);
+
+buttons.forEach(button=>{
+button.addEventListener("click",()=>{
+buttons.forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+category=button.dataset.cat;
+filterJobs();
+});
+});
+</script>
+
+</body>
+</html>
