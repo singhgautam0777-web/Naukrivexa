@@ -5,35 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Career Tools - NaukriVexa</title>
-<meta name="description" content="NaukriVexa के free Percentage, Age, Height, BMI, Salary और Typing Test tools.">
+
+<meta name="description" content="NaukriVexa के Free Career Tools - Percentage, Age, Height, BMI, Salary, Typing Test, Scholarship और Mock Test.">
 
 <style>
+
 *{
     box-sizing:border-box;
 }
 
 body{
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#f4f7fb;
     color:#111827;
 }
 
 header{
-    background:linear-gradient(135deg,#111827,#1f2937);
+    background:linear-gradient(135deg,#111827,#374151);
     color:white;
     text-align:center;
-    padding:28px 15px;
+    padding:30px 15px;
 }
 
 header h1{
     margin:0 0 8px;
-    font-size:28px;
+    font-size:29px;
 }
 
 header p{
     margin:0;
     color:#d1d5db;
+    font-size:15px;
 }
 
 .container{
@@ -46,38 +49,41 @@ header p{
     background:white;
     padding:20px;
     margin-bottom:18px;
-    border-radius:16px;
-    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    border-radius:17px;
     border:1px solid #e5e7eb;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
 }
 
 .tool h2{
-    margin:0 0 8px;
+    margin:0 0 7px;
     font-size:21px;
 }
 
-.tool p{
+.tool-description{
     color:#6b7280;
+    font-size:14px;
     line-height:1.5;
+    margin-top:0;
+    margin-bottom:17px;
 }
 
 label{
     display:block;
-    margin-top:12px;
-    margin-bottom:5px;
     font-size:14px;
     font-weight:bold;
+    margin:12px 0 6px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
     width:100%;
     padding:13px;
-    margin-bottom:10px;
     border:1px solid #d1d5db;
     border-radius:10px;
     font-size:16px;
+    background:white;
     outline:none;
-    background:#fff;
 }
 
 input:focus,
@@ -89,6 +95,7 @@ textarea:focus{
 button{
     width:100%;
     padding:13px;
+    margin-top:10px;
     border:0;
     border-radius:10px;
     background:#111827;
@@ -96,7 +103,6 @@ button{
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:4px;
 }
 
 button:hover{
@@ -106,57 +112,88 @@ button:hover{
 .reset{
     background:#e5e7eb;
     color:#111827;
-    margin-top:8px;
 }
 
 .result{
     display:none;
-    margin-top:14px;
-    padding:16px;
-    background:#eef2ff;
+    margin-top:15px;
+    padding:17px;
     border-radius:12px;
-    border:1px solid #dbeafe;
+    background:#f0f4ff;
+    border:1px solid #dbe4ff;
     line-height:1.7;
 }
 
-.big-result{
-    font-size:30px;
+.big{
+    font-size:29px;
     font-weight:bold;
 }
 
 .badge{
     display:inline-block;
-    padding:5px 10px;
+    padding:5px 11px;
+    margin-top:5px;
     border-radius:20px;
     background:#e5e7eb;
     font-size:13px;
-    margin-top:6px;
+    font-weight:bold;
+}
+
+.divider{
+    border:0;
+    border-top:1px solid #e5e7eb;
+    margin:22px 0;
+}
+
+.small{
+    color:#6b7280;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.question{
+    background:#f9fafb;
+    padding:14px;
+    border-radius:11px;
+    margin:12px 0;
+    border:1px solid #e5e7eb;
+}
+
+.question label{
+    font-weight:normal;
+    margin:7px 0;
+}
+
+.question input[type="radio"]{
+    width:auto;
+    margin-right:7px;
 }
 
 .back{
     display:block;
     text-align:center;
-    margin:28px 0;
+    margin:30px 0;
     color:#111827;
     text-decoration:none;
     font-weight:bold;
 }
 
-.small-note{
-    font-size:13px;
-    color:#6b7280;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>🛠️ Career Tools</h1>
-    <p>NaukriVexa के Free Useful Tools</p>
+
+<h1>🛠️ Career Tools</h1>
+
+<p>NaukriVexa के Free Useful Tools</p>
+
 </header>
 
+
 <div class="container">
+
 
 <!-- ================= PERCENTAGE ================= -->
 
@@ -164,32 +201,36 @@ button:hover{
 
 <h2>🧮 Percentage Calculator</h2>
 
-<p>प्राप्त अंक और कुल अंक डालकर percentage निकालें।</p>
+<p class="tool-description">
+प्राप्त अंक और कुल अंक डालकर percentage निकालें।
+</p>
 
 <label>प्राप्त अंक</label>
+
 <input
-    type="number"
-    id="obtained"
-    placeholder="जैसे 540"
-    min="0"
-    inputmode="numeric"
+type="number"
+id="obtained"
+placeholder="जैसे 540"
+min="0"
+inputmode="numeric"
 >
 
 <label>कुल अंक</label>
+
 <input
-    type="number"
-    id="total"
-    placeholder="जैसे 600"
-    min="1"
-    inputmode="numeric"
+type="number"
+id="total"
+placeholder="जैसे 600"
+min="1"
+inputmode="numeric"
 >
 
 <button onclick="percentage()">
-    🧮 Calculate Percentage
+🧮 Calculate Percentage
 </button>
 
 <button class="reset" onclick="resetPercentage()">
-    🔄 Reset
+🔄 Reset
 </button>
 
 <div id="percentResult" class="result"></div>
@@ -203,21 +244,23 @@ button:hover{
 
 <h2>🎂 Age Calculator</h2>
 
-<p>अपनी Date of Birth डालकर exact age देखें।</p>
+<p class="tool-description">
+Date of Birth डालकर अपनी exact उम्र देखें।
+</p>
 
 <label>Date of Birth</label>
 
 <input
-    type="date"
-    id="dob"
+type="date"
+id="dob"
 >
 
 <button onclick="ageCalc()">
-    🎂 Calculate Age
+🎂 Calculate Age
 </button>
 
 <button class="reset" onclick="resetAge()">
-    🔄 Reset
+🔄 Reset
 </button>
 
 <div id="ageResult" class="result"></div>
@@ -231,38 +274,67 @@ button:hover{
 
 <h2>📐 Height Converter</h2>
 
-<p>Feet और Inch को Centimeter में convert करें।</p>
+<p class="tool-description">
+Feet/Inch और Centimeter के बीच height convert करें।
+</p>
 
 <label>Feet</label>
 
 <input
-    type="number"
-    id="feet"
-    placeholder="जैसे 5"
-    min="0"
-    step="1"
+type="number"
+id="feet"
+placeholder="जैसे 5"
+min="0"
+step="1"
+inputmode="numeric"
 >
 
 <label>Inch</label>
 
 <input
-    type="number"
-    id="inch"
-    placeholder="जैसे 6"
-    min="0"
-    max="11.99"
-    step="0.1"
+type="number"
+id="inch"
+placeholder="जैसे 5.5"
+min="0"
+max="11.99"
+step="0.1"
+inputmode="decimal"
 >
 
 <button onclick="heightCalc()">
-    📐 Convert to CM
+📐 Convert to CM
 </button>
 
 <button class="reset" onclick="resetHeight()">
-    🔄 Reset
+🔄 Reset
 </button>
 
 <div id="heightResult" class="result"></div>
+
+
+<hr class="divider">
+
+
+<label>CM से Feet + Inch</label>
+
+<input
+type="number"
+id="cmInput"
+placeholder="जैसे 167"
+min="1"
+step="0.1"
+inputmode="decimal"
+>
+
+<button onclick="cmToHeight()">
+🔄 Convert CM
+</button>
+
+<button class="reset" onclick="resetCM()">
+🔄 Reset
+</button>
+
+<div id="cmResult" class="result"></div>
 
 </div>
 
@@ -273,37 +345,45 @@ button:hover{
 
 <h2>⚖️ BMI Calculator</h2>
 
-<p>Weight और height डालकर BMI और category देखें।</p>
+<p class="tool-description">
+Weight और height डालकर BMI calculate करें।
+</p>
 
 <label>Weight (kg)</label>
 
 <input
-    type="number"
-    id="weight"
-    placeholder="जैसे 60"
-    min="1"
-    step="0.1"
+type="number"
+id="weight"
+placeholder="जैसे 60"
+min="1"
+step="0.1"
+inputmode="decimal"
 >
 
 <label>Height (cm)</label>
 
 <input
-    type="number"
-    id="height"
-    placeholder="जैसे 170"
-    min="1"
-    step="0.1"
+type="number"
+id="height"
+placeholder="जैसे 170"
+min="1"
+step="0.1"
+inputmode="decimal"
 >
 
 <button onclick="bmiCalc()">
-    ⚖️ Calculate BMI
+⚖️ Calculate BMI
 </button>
 
 <button class="reset" onclick="resetBMI()">
-    🔄 Reset
+🔄 Reset
 </button>
 
 <div id="bmiResult" class="result"></div>
+
+<p class="small">
+BMI एक सामान्य screening calculation है; यह medical diagnosis नहीं है।
+</p>
 
 </div>
 
@@ -314,58 +394,68 @@ button:hover{
 
 <h2>💰 Salary Calculator</h2>
 
-<p>Monthly gross salary से annual gross salary देखें।</p>
+<p class="tool-description">
+Monthly Gross Salary से annual gross salary calculate करें।
+</p>
 
 <label>Monthly Gross Salary (₹)</label>
 
 <input
-    type="number"
-    id="salary"
-    placeholder="जैसे 30000"
-    min="1"
-    inputmode="numeric"
+type="number"
+id="salary"
+placeholder="जैसे 30000"
+min="1"
+inputmode="numeric"
 >
 
 <button onclick="salaryCalc()">
-    💰 Calculate Salary
+💰 Calculate Salary
 </button>
 
 <button class="reset" onclick="resetSalary()">
-    🔄 Reset
+🔄 Reset
 </button>
 
 <div id="salaryResult" class="result"></div>
 
-<p class="small-note">
-* यह basic gross salary calculation है। Actual in-hand salary deductions और allowances पर निर्भर करती है।
+<p class="small">
+यह basic gross salary calculation है। Actual in-hand salary deductions, allowances और taxes पर निर्भर करती है।
 </p>
 
 </div>
 
 
-<!-- ================= TYPING ================= -->
+<!-- ================= TYPING TEST ================= -->
 
 <div class="tool">
 
 <h2>⌨️ Typing Test</h2>
 
-<p id="typingText">
-India is a diverse country with many languages, cultures and traditions.
+<p class="tool-description">
+नीचे दिए गए paragraph को type करके अपनी speed और accuracy देखें।
 </p>
 
+<div class="question">
+
+<p id="typingText">
+India is a diverse country with many languages, cultures and traditions. Government jobs provide opportunities for students across India.
+</p>
+
+</div>
+
 <textarea
-    id="typingInput"
-    style="height:120px"
-    placeholder="ऊपर दिए गए text को यहाँ type करें..."
-    oninput="startTypingTimer()"
+id="typingInput"
+rows="6"
+placeholder="ऊपर के text को यहाँ type करें..."
+oninput="startTyping()"
 ></textarea>
 
 <button onclick="typingCalc()">
-    ⌨️ Check Typing Speed
+⌨️ Check Typing Speed
 </button>
 
 <button class="reset" onclick="resetTyping()">
-    🔄 Reset
+🔄 Reset
 </button>
 
 <div id="typingResult" class="result"></div>
@@ -379,7 +469,11 @@ India is a diverse country with many languages, cultures and traditions.
 
 <h2>🎓 Scholarship Finder</h2>
 
-<p>अपनी qualification चुनें।</p>
+<p class="tool-description">
+अपनी qualification चुनें और scholarship category देखें।
+</p>
+
+<label>Qualification</label>
 
 <select id="qualification">
 
@@ -387,18 +481,33 @@ India is a diverse country with many languages, cultures and traditions.
 Qualification चुनें
 </option>
 
-<option>8th Pass</option>
-<option>10th Pass</option>
-<option>12th Pass</option>
-<option>Graduate</option>
+<option value="8th">
+8th Pass
+</option>
+
+<option value="10th">
+10th Pass
+</option>
+
+<option value="12th">
+12th Pass
+</option>
+
+<option value="graduate">
+Graduate
+</option>
 
 </select>
 
 <button onclick="scholarship()">
-    🎓 Search Scholarship
+🎓 Find Scholarships
 </button>
 
 <div id="scholarshipResult" class="result"></div>
+
+<p class="small">
+Scholarship की eligibility, dates और amount हमेशा official notification/portal से verify करें।
+</p>
 
 </div>
 
@@ -407,15 +516,87 @@ Qualification चुनें
 
 <div class="tool">
 
-<h2>📝 Mock Tests</h2>
+<h2>📝 Mini Mock Test</h2>
 
-<p>
-SSC, Railway, Police और Defence exams के mock tests जल्द उपलब्ध होंगे।
+<p class="tool-description">
+NaukriVexa का छोटा practice quiz।
 </p>
 
-<button onclick="alert('Mock Tests जल्द ही उपलब्ध होंगे।')">
-    📝 Start Mock Test
+<div class="question">
+
+<b>Q1. भारत की राजधानी क्या है?</b>
+
+<label>
+<input type="radio" name="q1" value="a">
+Mumbai
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+New Delhi
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+Kolkata
+</label>
+
+</div>
+
+
+<div class="question">
+
+<b>Q2. 25 × 4 = ?</b>
+
+<label>
+<input type="radio" name="q2" value="a">
+80
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+90
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+100
+</label>
+
+</div>
+
+
+<div class="question">
+
+<b>Q3. भारत का राष्ट्रीय पशु कौन है?</b>
+
+<label>
+<input type="radio" name="q3" value="a">
+Tiger
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+Lion
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+Elephant
+</label>
+
+</div>
+
+
+<button onclick="mockTest()">
+📝 Submit Test
 </button>
+
+<button class="reset" onclick="resetMock()">
+🔄 Reset Test
+</button>
+
+<div id="mockResult" class="result"></div>
 
 </div>
 
@@ -429,59 +610,64 @@ SSC, Railway, Police और Defence exams के mock tests जल्द उप�
 
 <script>
 
+
 /* ================= PERCENTAGE ================= */
 
 function percentage(){
 
-    let obtained =
-        Number(document.getElementById("obtained").value);
+let obtained =
+Number(document.getElementById("obtained").value);
 
-    let total =
-        Number(document.getElementById("total").value);
+let total =
+Number(document.getElementById("total").value);
 
-    let resultBox =
-        document.getElementById("percentResult");
+let box =
+document.getElementById("percentResult");
 
-    resultBox.style.display="block";
+box.style.display="block";
 
-    if(obtained < 0 || total <= 0){
+if(obtained < 0 || total <= 0){
 
-        resultBox.innerHTML =
-        "⚠️ कृपया सही अंक दर्ज करें।";
+box.innerHTML =
+"⚠️ कृपया सही अंक दर्ज करें।";
 
-        return;
-    }
+return;
+}
 
-    if(obtained > total){
+if(obtained > total){
 
-        resultBox.innerHTML =
-        "⚠️ प्राप्त अंक कुल अंकों से अधिक नहीं हो सकते।";
+box.innerHTML =
+"⚠️ प्राप्त अंक कुल अंकों से अधिक नहीं हो सकते।";
 
-        return;
-    }
+return;
+}
 
-    let result =
-        (obtained / total) * 100;
+let result =
+(obtained / total) * 100;
 
-    resultBox.innerHTML =
-    "📊 Your Percentage<br>" +
-    "<span class='big-result'>" +
-    result.toFixed(2) +
-    "%</span><br>" +
-    "Obtained: " + obtained +
-    " / " + total;
+box.innerHTML =
+"📊 Your Percentage<br>" +
+"<span class='big'>" +
+result.toFixed(2) +
+"%</span><br>" +
+"Obtained: " +
+obtained +
+" / " +
+total;
 }
 
 
 function resetPercentage(){
 
-    document.getElementById("obtained").value="";
-    document.getElementById("total").value="";
+document.getElementById("obtained").value="";
+document.getElementById("total").value="";
 
-    let box=document.getElementById("percentResult");
+let box =
+document.getElementById("percentResult");
 
-    box.innerHTML="";
-    box.style.display="none";
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 
@@ -489,77 +675,93 @@ function resetPercentage(){
 
 function ageCalc(){
 
-    let value=document.getElementById("dob").value;
+let value =
+document.getElementById("dob").value;
 
-    let box=document.getElementById("ageResult");
+let box =
+document.getElementById("ageResult");
 
-    box.style.display="block";
+box.style.display="block";
 
-    if(!value){
+if(!value){
 
-        box.innerHTML=
-        "⚠️ पहले Date of Birth चुनें।";
+box.innerHTML =
+"⚠️ पहले Date of Birth चुनें।";
 
-        return;
-    }
+return;
+}
 
-    let dob=new Date(value+"T00:00:00");
-    let today=new Date();
+let dob =
+new Date(value + "T00:00:00");
 
-    if(dob > today){
+let today =
+new Date();
 
-        box.innerHTML=
-        "⚠️ Future Date of Birth मान्य नहीं है।";
+if(dob > today){
 
-        return;
-    }
+box.innerHTML =
+"⚠️ Future Date of Birth मान्य नहीं है।";
 
-    let years=
-        today.getFullYear()-dob.getFullYear();
+return;
+}
 
-    let months=
-        today.getMonth()-dob.getMonth();
+let years =
+today.getFullYear() -
+dob.getFullYear();
 
-    let days=
-        today.getDate()-dob.getDate();
+let months =
+today.getMonth() -
+dob.getMonth();
 
-    if(days < 0){
+let days =
+today.getDate() -
+dob.getDate();
 
-        months--;
+if(days < 0){
 
-        let previousMonth=
-        new Date(
-            today.getFullYear(),
-            today.getMonth(),
-            0
-        );
+months--;
 
-        days += previousMonth.getDate();
-    }
+let previousMonth =
+new Date(
+today.getFullYear(),
+today.getMonth(),
+0
+);
 
-    if(months < 0){
+days += previousMonth.getDate();
 
-        years--;
-        months += 12;
-    }
+}
 
-    box.innerHTML=
-    "🎂 Your Age<br>" +
-    "<span class='big-result'>" +
-    years + " Years</span><br>" +
-    months + " Months, " +
-    days + " Days";
+if(months < 0){
+
+years--;
+months += 12;
+
+}
+
+box.innerHTML =
+"🎂 Your Age<br>" +
+"<span class='big'>" +
+years +
+" Years</span><br>" +
+months +
+" Months, " +
+days +
+" Days";
+
 }
 
 
 function resetAge(){
 
-    document.getElementById("dob").value="";
+document.getElementById("dob").value="";
 
-    let box=document.getElementById("ageResult");
+let box =
+document.getElementById("ageResult");
 
-    box.innerHTML="";
-    box.style.display="none";
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 
@@ -567,58 +769,113 @@ function resetAge(){
 
 function heightCalc(){
 
-    let feet=
-        Number(document.getElementById("feet").value);
+let feet =
+Number(document.getElementById("feet").value);
 
-    let inch=
-        Number(document.getElementById("inch").value);
+let inch =
+Number(document.getElementById("inch").value);
 
-    let box=
-        document.getElementById("heightResult");
+let box =
+document.getElementById("heightResult");
 
-    box.style.display="block";
+box.style.display="block";
 
-    if(feet < 0 || inch < 0 || inch >= 12){
+if(feet < 0 || inch < 0 || inch >= 12){
 
-        box.innerHTML=
-        "⚠️ कृपया सही Feet और Inch डालें।";
+box.innerHTML =
+"⚠️ कृपया सही Feet और Inch डालें।";
 
-        return;
-    }
+return;
+}
 
-    if(feet===0 && inch===0){
+if(feet === 0 && inch === 0){
 
-        box.innerHTML=
-        "⚠️ Height दर्ज करें।";
+box.innerHTML =
+"⚠️ कृपया height दर्ज करें।";
 
-        return;
-    }
+return;
+}
 
-    let cm=
-        (feet*30.48)+(inch*2.54);
+let cm =
+(feet * 30.48) +
+(inch * 2.54);
 
-    let totalInches=
-        (feet*12)+inch;
+box.innerHTML =
+"📏 Your Height<br>" +
+"<span class='big'>" +
+cm.toFixed(2) +
+" cm</span><br>" +
+(feet * 12 + inch).toFixed(2) +
+" inches";
 
-    box.innerHTML=
-    "📏 Height<br>" +
-    "<span class='big-result'>" +
-    cm.toFixed(2) +
-    " cm</span><br>" +
-    totalInches.toFixed(1) +
-    " inches";
+}
+
+
+function cmToHeight(){
+
+let cm =
+Number(document.getElementById("cmInput").value);
+
+let box =
+document.getElementById("cmResult");
+
+box.style.display="block";
+
+if(cm <= 0){
+
+box.innerHTML =
+"⚠️ कृपया सही height दर्ज करें।";
+
+return;
+}
+
+let totalInches =
+cm / 2.54;
+
+let feet =
+Math.floor(totalInches / 12);
+
+let inch =
+totalInches -
+(feet * 12);
+
+box.innerHTML =
+"📏 Converted Height<br>" +
+"<span class='big'>" +
+feet +
+" ft " +
+inch.toFixed(2) +
+" in</span><br>" +
+cm.toFixed(2) +
+" cm";
+
 }
 
 
 function resetHeight(){
 
-    document.getElementById("feet").value="";
-    document.getElementById("inch").value="";
+document.getElementById("feet").value="";
+document.getElementById("inch").value="";
 
-    let box=document.getElementById("heightResult");
+let box =
+document.getElementById("heightResult");
 
-    box.innerHTML="";
-    box.style.display="none";
+box.innerHTML="";
+box.style.display="none";
+
+}
+
+
+function resetCM(){
+
+document.getElementById("cmInput").value="";
+
+let box =
+document.getElementById("cmResult");
+
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 
@@ -626,69 +883,77 @@ function resetHeight(){
 
 function bmiCalc(){
 
-    let weight=
-        Number(document.getElementById("weight").value);
+let weight =
+Number(document.getElementById("weight").value);
 
-    let heightCm=
-        Number(document.getElementById("height").value);
+let heightCm =
+Number(document.getElementById("height").value);
 
-    let box=
-        document.getElementById("bmiResult");
+let box =
+document.getElementById("bmiResult");
 
-    box.style.display="block";
+box.style.display="block";
 
-    if(weight<=0 || heightCm<=0){
+if(weight <= 0 || heightCm <= 0){
 
-        box.innerHTML=
-        "⚠️ कृपया सही height और weight डालें।";
+box.innerHTML =
+"⚠️ कृपया सही weight और height दर्ज करें।";
 
-        return;
-    }
+return;
+}
 
-    let height=heightCm/100;
+let height =
+heightCm / 100;
 
-    let bmi=
-        weight/(height*height);
+let bmi =
+weight / (height * height);
 
-    let category="";
+let category;
 
-    if(bmi < 18.5){
+if(bmi < 18.5){
 
-        category="Underweight";
-    }
-    else if(bmi < 25){
+category="Underweight";
 
-        category="Normal";
-    }
-    else if(bmi < 30){
+}
+else if(bmi < 25){
 
-        category="Overweight";
-    }
-    else{
+category="Normal";
 
-        category="Obesity";
-    }
+}
+else if(bmi < 30){
 
-    box.innerHTML=
-    "⚖️ Your BMI<br>" +
-    "<span class='big-result'>" +
-    bmi.toFixed(2) +
-    "</span><br>" +
-    "<span class='badge'>" +
-    category +
-    "</span>";
+category="Overweight";
+
+}
+else{
+
+category="Obesity";
+
+}
+
+box.innerHTML =
+"⚖️ Your BMI<br>" +
+"<span class='big'>" +
+bmi.toFixed(2) +
+"</span><br>" +
+"<span class='badge'>" +
+category +
+"</span>";
+
 }
 
 
 function resetBMI(){
 
-    document.getElementById("weight").value="";
-    document.getElementById("height").value="";
+document.getElementById("weight").value="";
+document.getElementById("height").value="";
 
-    let box=document.getElementById("bmiResult");
+let box =
+document.getElementById("bmiResult");
 
-    box.innerHTML="";
-    box.style.display="none";
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 
@@ -696,140 +961,173 @@ function resetBMI(){
 
 function salaryCalc(){
 
-    let monthly=
-        Number(document.getElementById("salary").value);
+let monthly =
+Number(document.getElementById("salary").value);
 
-    let box=
-        document.getElementById("salaryResult");
+let box =
+document.getElementById("salaryResult");
 
-    box.style.display="block";
+box.style.display="block";
 
-    if(monthly<=0){
+if(monthly <= 0){
 
-        box.innerHTML=
-        "⚠️ कृपया monthly salary दर्ज करें।";
+box.innerHTML =
+"⚠️ कृपया monthly salary दर्ज करें।";
 
-        return;
-    }
+return;
+}
 
-    let annual=monthly*12;
+let annual =
+monthly * 12;
 
-    box.innerHTML=
-    "💰 Monthly Gross Salary<br>" +
-    "<span class='big-result'>₹" +
-    monthly.toLocaleString("en-IN") +
-    "</span><br><br>" +
+box.innerHTML =
+"💰 Monthly Gross Salary<br>" +
+"<span class='big'>₹" +
+monthly.toLocaleString("en-IN") +
+"</span><br><br>" +
 
-    "📅 Estimated Annual Gross Salary<br>" +
-    "<b>₹" +
-    annual.toLocaleString("en-IN") +
-    "</b>";
+"📅 Annual Gross Salary<br>" +
+"<b>₹" +
+annual.toLocaleString("en-IN") +
+"</b>";
+
 }
 
 
 function resetSalary(){
 
-    document.getElementById("salary").value="";
+document.getElementById("salary").value="";
 
-    let box=document.getElementById("salaryResult");
+let box =
+document.getElementById("salaryResult");
 
-    box.innerHTML="";
-    box.style.display="none";
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 
 /* ================= TYPING ================= */
 
-let typingStart=null;
+let typingStart = null;
 
-function startTypingTimer(){
+function startTyping(){
 
-    if(!typingStart){
+if(!typingStart){
 
-        typingStart=Date.now();
-    }
+typingStart =
+Date.now();
+
+}
+
 }
 
 
 function typingCalc(){
 
-    let original=
-        document.getElementById("typingText")
-        .innerText.trim();
+let original =
+document.getElementById("typingText")
+.innerText
+.trim();
 
-    let typed=
-        document.getElementById("typingInput")
-        .value.trim();
+let typed =
+document.getElementById("typingInput")
+.value
+.trim();
 
-    let box=
-        document.getElementById("typingResult");
+let box =
+document.getElementById("typingResult");
 
-    box.style.display="block";
+box.style.display="block";
 
-    if(!typed){
+if(!typed){
 
-        box.innerHTML=
-        "⚠️ पहले typing करें।";
+box.innerHTML =
+"⚠️ पहले typing करें।";
 
-        return;
-    }
+return;
+}
 
-    if(!typingStart){
+if(!typingStart){
 
-        typingStart=Date.now();
-    }
+typingStart =
+Date.now();
 
-    let minutes=
-        (Date.now()-typingStart)/60000;
+}
 
-    if(minutes<=0){
+let seconds =
+(Date.now() - typingStart) / 1000;
 
-        minutes=1/60;
-    }
+if(seconds < 1){
 
-    let words=
-        typed.split(/\s+/).length;
+seconds = 1;
 
-    let wpm=
-        Math.round(words/minutes);
+}
 
-    let correctChars=0;
+let minutes =
+seconds / 60;
 
-    let maxLength=
-        Math.min(original.length,typed.length);
+let words =
+typed.split(/\s+/).length;
 
-    for(let i=0;i<maxLength;i++){
+let wpm =
+Math.round(words / minutes);
 
-        if(original[i]===typed[i]){
+let compareLength =
+Math.min(
+original.length,
+typed.length
+);
 
-            correctChars++;
-        }
-    }
+let correctChars=0;
 
-    let accuracy=
-        (correctChars/original.length)*100;
+for(
+let i=0;
+i<compareLength;
+i++
+){
 
-    box.innerHTML=
-    "⌨️ Typing Speed<br>" +
-    "<span class='big-result'>" +
-    wpm +
-    " WPM</span><br>" +
-    "Accuracy: " +
-    accuracy.toFixed(1) +
-    "%";
+if(original[i] === typed[i]){
+
+correctChars++;
+
+}
+
+}
+
+let accuracy =
+(correctChars / original.length) * 100;
+
+if(accuracy > 100){
+
+accuracy=100;
+
+}
+
+box.innerHTML =
+"⌨️ Typing Speed<br>" +
+"<span class='big'>" +
+wpm +
+" WPM</span><br>" +
+"Accuracy: " +
+accuracy.toFixed(1) +
+"%";
+
 }
 
 
 function resetTyping(){
 
-    document.getElementById("typingInput").value="";
+document.getElementById("typingInput").value="";
 
-    typingStart=null;
+typingStart=null;
 
-    let box=document.getElementById("typingResult");
+let box =
+document.getElementById("typingResult");
 
-    box.innerHTML="";
-    box.style.display="none";
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 
@@ -837,25 +1135,140 @@ function resetTyping(){
 
 function scholarship(){
 
-    let q=
-        document.getElementById("qualification").value;
+let q =
+document.getElementById("qualification").value;
 
-    let box=
-        document.getElementById("scholarshipResult");
+let box =
+document.getElementById("scholarshipResult");
 
-    box.style.display="block";
+box.style.display="block";
 
-    if(!q){
+if(!q){
 
-        box.innerHTML=
-        "⚠️ Qualification चुनें।";
+box.innerHTML =
+"⚠️ Qualification चुनें।";
 
-        return;
-    }
+return;
+}
 
-    box.innerHTML=
-    "🎓 " + q +
-    " students के लिए scholarship information जल्द जोड़ी जाएगी।";
+let message="";
+
+if(q === "8th"){
+
+message =
+"📚 8th Pass students के लिए state और school-level scholarship schemes check करें।";
+
+}
+
+else if(q === "10th"){
+
+message =
+"📚 10th Pass students के लिए post-matric और state scholarship schemes check करें।";
+
+}
+
+else if(q === "12th"){
+
+message =
+"🎓 12th Pass students के लिए college और higher-education scholarship schemes check करें।";
+
+}
+
+else{
+
+message =
+"🎓 Graduate students के लिए higher-education और postgraduate scholarship schemes check करें।";
+
+}
+
+box.innerHTML =
+message +
+"<br><br>" +
+"<span class='small'>" +
+"Exact eligibility और application dates official portal से verify करें।" +
+"</span>";
+
+}
+
+
+/* ================= MOCK TEST ================= */
+
+function mockTest(){
+
+let score=0;
+
+let q1 =
+document.querySelector(
+'input[name="q1"]:checked'
+);
+
+let q2 =
+document.querySelector(
+'input[name="q2"]:checked'
+);
+
+let q3 =
+document.querySelector(
+'input[name="q3"]:checked'
+);
+
+if(q1 && q1.value==="b"){
+
+score++;
+
+}
+
+if(q2 && q2.value==="c"){
+
+score++;
+
+}
+
+if(q3 && q3.value==="a"){
+
+score++;
+
+}
+
+let box =
+document.getElementById("mockResult");
+
+box.style.display="block";
+
+box.innerHTML =
+"📝 Test Result<br>" +
+"<span class='big'>" +
+score +
+" / 3</span><br>" +
+"Correct Answers: " +
+score +
+"<br>" +
+"Wrong / Unattempted: " +
+(3-score);
+
+}
+
+
+function resetMock(){
+
+let radios =
+document.querySelectorAll(
+'input[type="radio"]'
+);
+
+radios.forEach(
+function(radio){
+
+radio.checked=false;
+
+});
+
+let box =
+document.getElementById("mockResult");
+
+box.innerHTML="";
+box.style.display="none";
+
 }
 
 </script>
